@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: content/uploads
+public_folder: content/uploads
+
+locale: it
+
+collections:
+  - name: 'news'
+    label: 'News'
+    folder: 'content/news'
+    create: true
+    # slug: 'index'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

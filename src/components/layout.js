@@ -5,10 +5,12 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import Sider from "antd/lib/layout/Sider"
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import * as React from "react"
+import React from "react"
 import "./layout.css"
+import Sidebar from "./navbar"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,7 +31,12 @@ const Layout = ({ children }) => {
           padding: `2rem 7rem`,
         }}
       >
-        <main>{children}</main>
+        <main>
+          <Sider theme="light" width={300} breakpoint="md">
+            <Sidebar style={{ width: "100%", fontSize: "1.2rem" }} />
+          </Sider>
+          {children}
+        </main>
         <footer
           style={{
             marginTop: `2rem`,

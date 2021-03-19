@@ -15,8 +15,22 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: { plugins: [`gatsby-plugin-netlify-cms-paths`] },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
