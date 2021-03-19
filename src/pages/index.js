@@ -1,10 +1,10 @@
-import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import * as React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import "../styles/index.scss"
-import dnaBg from "../images/bg.svg"
+import { graphql, Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import "../styles/index.scss";
+import dnaBg from "../images/bg.svg";
 
 const IndexPage = ({ data }) => (
   <>
@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => (
       <h1 className="home-title">Imaging platform</h1>
       <div className="head-banner"></div>
     </header>
-    <Layout>
+    <Layout pageName="home">
       <img className="dna-bg" src={dnaBg} />
       <div className="content">
         <section className="intro">
@@ -37,9 +37,9 @@ const IndexPage = ({ data }) => (
         <section id="news">
           <h1>Latest News</h1>
           <div className="title-underline" />
-          <div className="news-container">
+          <div className="news-preview-container">
             {data.news.nodes.map((item, index) => (
-              <NewsEntry data={item.childMarkdownRemark} key={index} />
+              <NewsPreview data={item.childMarkdownRemark} key={index} />
             ))}
           </div>
         </section>
@@ -47,24 +47,24 @@ const IndexPage = ({ data }) => (
       <SEO title="Home" />
     </Layout>
   </>
-)
+);
 
-const NewsEntry = ({ data }) => {
+const NewsPreview = ({ data }) => {
   return (
-    <div className="news-entry">
-      <Link to="/">
-        <div className="news-image">
+    <div className="news-preview-entry">
+      <Link to="/news">
+        <div className="news-preview-image">
           <GatsbyImage
-            className="news-image"
+            className="news-preview-image"
             image={getImage(data.frontmatter.featuredImage)}
             alt=""
           />
         </div>
-        <div className="news-content">
+        <div className="news-preview-content">
           <h3>{data.frontmatter.title}</h3>
-          <div className="news-text-divider" />
+          <div className="news-preview-text-divider" />
           <div
-            className="news-text"
+            className="news-preview-text"
             dangerouslySetInnerHTML={{
               __html: data.html,
             }}
@@ -73,8 +73,8 @@ const NewsEntry = ({ data }) => {
         </div>
       </Link>
     </div>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -102,6 +102,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;

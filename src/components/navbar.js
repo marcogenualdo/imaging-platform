@@ -5,55 +5,78 @@ import {
   PhoneOutlined,
   TeamOutlined,
   BorderlessTableOutlined,
-} from "@ant-design/icons"
-import { Menu } from "antd"
-import "antd/dist/antd.css"
-import { Link } from "gatsby"
-import React from "react"
+} from "@ant-design/icons";
+import { Menu } from "antd";
+import "antd/dist/antd.css";
+import { Link } from "gatsby";
+import React from "react";
 
-const { SubMenu } = Menu
+const { SubMenu } = Menu;
 
-const Sidebar = () => {
-  const handleClick = e => {
-    console.log("click ", e)
-  }
+const SidebarItem = (props) => {
+  return (
+    <Menu.Item
+      {...props}
+      key={props.route}
+      icon={props.icon}
+      style={{ display: props.open ? "block" : "none" }}
+    >
+      <Link to={props.route}>{props.name}</Link>
+    </Menu.Item>
+  );
+};
+
+const Sidebar = ({ pageName, open }) => {
+  const handleClick = (e) => {
+    console.log("click ", e);
+  };
 
   return (
     <Menu
       onClick={handleClick}
-      style={{ width: 256 }}
-      defaultSelectedKeys={["home"]}
-      defaultOpenKeys={["sub1"]}
+      defaultSelectedKeys={[pageName]}
+      defaultOpenKeys={["equipments-sub"]}
       mode="inline"
+      id="navbar"
+      style={{ width: open ? 300 : 0 }}
     >
-      <Menu.Item key="home" icon={<HomeOutlined />}>
-        <Link>Home</Link>
-      </Menu.Item>
-      <Menu.Item key="news" icon={<BorderlessTableOutlined />}>
-        <Link>News</Link>
-      </Menu.Item>
-      <SubMenu key="sub1" icon={<ExperimentOutlined />} title="Equipments">
-        <Menu.Item key="1">
-          <Link>Equipments</Link>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <Link>Guidelines & FAQs</Link>
-        </Menu.Item>
-        <Menu.Item key="3">
-          <Link>Tutorials</Link>
-        </Menu.Item>
+      <SidebarItem name="Home" route="/" icon={<HomeOutlined />} open={open} />
+      <SidebarItem
+        name="News"
+        route="/news"
+        icon={<BorderlessTableOutlined />}
+        open={open}
+      />
+      <SubMenu
+        key="equipments-sub"
+        icon={<ExperimentOutlined />}
+        title="Equipments"
+        style={{ display: open ? "block" : "none" }}
+      >
+        <SidebarItem name="Equipments" route="/equipments" open={open} />
+        <SidebarItem name="Guidelines & FAQs" route="/faq" open={open} />
+        <SidebarItem name="Tutorials" route="/tutorials" open={open} />
       </SubMenu>
-      <Menu.Item key="1" icon={<PhoneOutlined />}>
-        <Link>Contacts</Link>
-      </Menu.Item>
-      <Menu.Item key="2" icon={<PaperClipOutlined />}>
-        <Link>Publications</Link>
-      </Menu.Item>
-      <Menu.Item key="3" icon={<TeamOutlined />}>
-        <Link>Partners</Link>
-      </Menu.Item>
+      <SidebarItem
+        name="Contacts"
+        route="/contacts"
+        open={open}
+        icon={<PhoneOutlined />}
+      />
+      <SidebarItem
+        name="Publications"
+        route="/publications"
+        open={open}
+        icon={<PaperClipOutlined />}
+      />
+      <SidebarItem
+        name="Partners"
+        route="/partners"
+        open={open}
+        icon={<TeamOutlined />}
+      />
     </Menu>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
