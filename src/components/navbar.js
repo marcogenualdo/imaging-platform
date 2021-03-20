@@ -11,21 +11,6 @@ import "antd/dist/antd.css";
 import { Link } from "gatsby";
 import React from "react";
 
-const { SubMenu } = Menu;
-
-const SidebarItem = (props) => {
-  return (
-    <Menu.Item
-      {...props}
-      key={props.route}
-      icon={props.icon}
-      style={{ display: props.open ? "block" : "none" }}
-    >
-      <Link to={props.route}>{props.name}</Link>
-    </Menu.Item>
-  );
-};
-
 const Sidebar = ({ pageName, open }) => {
   const handleClick = (e) => {
     console.log("click ", e);
@@ -38,43 +23,38 @@ const Sidebar = ({ pageName, open }) => {
       defaultOpenKeys={["equipments-sub"]}
       mode="inline"
       id="navbar"
-      style={{ width: open ? 300 : 0 }}
+      className={open ? "navbar-open" : "navbar-closed"}
     >
-      <SidebarItem name="Home" route="/" icon={<HomeOutlined />} open={open} />
-      <SidebarItem
-        name="News"
-        route="/news"
-        icon={<BorderlessTableOutlined />}
-        open={open}
-      />
-      <SubMenu
+      <Menu.Item key="home" icon={<HomeOutlined />}>
+        <Link to="/">Home</Link>
+      </Menu.Item>
+      <Menu.Item key="news" icon={<BorderlessTableOutlined />}>
+        <Link to="/news">News</Link>
+      </Menu.Item>
+      <Menu.SubMenu
         key="equipments-sub"
         icon={<ExperimentOutlined />}
         title="Equipments"
-        style={{ display: open ? "block" : "none" }}
       >
-        <SidebarItem name="Equipments" route="/equipments" open={open} />
-        <SidebarItem name="Guidelines & FAQs" route="/faq" open={open} />
-        <SidebarItem name="Tutorials" route="/tutorials" open={open} />
-      </SubMenu>
-      <SidebarItem
-        name="Contacts"
-        route="/contacts"
-        open={open}
-        icon={<PhoneOutlined />}
-      />
-      <SidebarItem
-        name="Publications"
-        route="/publications"
-        open={open}
-        icon={<PaperClipOutlined />}
-      />
-      <SidebarItem
-        name="Partners"
-        route="/partners"
-        open={open}
-        icon={<TeamOutlined />}
-      />
+        <Menu.Item key="equipments">
+          <Link to="/equipments">Equipments</Link>
+        </Menu.Item>
+        <Menu.Item key="faq">
+          <Link to="/faq">Guidelines & FAQs</Link>
+        </Menu.Item>
+        <Menu.Item key="tutorials">
+          <Link to="/tutorials">Tutorials</Link>
+        </Menu.Item>
+      </Menu.SubMenu>
+      <Menu.Item key="contacts" icon={<PhoneOutlined />}>
+        <Link to="/contacts">Contacts</Link>
+      </Menu.Item>
+      <Menu.Item key="publications" icon={<PaperClipOutlined />}>
+        <Link to="/publications">Publications</Link>
+      </Menu.Item>
+      <Menu.Item key="partners" icon={<TeamOutlined />}>
+        <Link to="/partners">Partners</Link>
+      </Menu.Item>
     </Menu>
   );
 };

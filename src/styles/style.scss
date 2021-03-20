@@ -47,4 +47,10 @@ body {
 
 #navbar {
   position: fixed;
+  width: 300px;
+  transition: transform 0.1s linear;
+}
+
+.navbar-closed {
+  transform: translateX(-300px);
 }
