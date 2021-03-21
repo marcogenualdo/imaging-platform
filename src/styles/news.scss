@@ -7,14 +7,9 @@
 
 .news-image {
   width: 40%;
-}
+  border-radius: 6px;
 
-.news-title-box {
-  .news-title {
-    float: left;
-  }
-
-  .news-date {
-    float: right;
+  picture {
+    border-radius: 6px;
   }
 }

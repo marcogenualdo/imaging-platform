@@ -24,8 +24,6 @@ const NewsEntry = ({ data, id }) => {
     <div className="news-entry">
       <div className="news-title-box">
         <h1 className="news-title">{content.frontmatter.title}</h1>
-        <h3 className="news-date">{data.birthTime}</h3>
-        <div style={{ clear: "both" }} />
       </div>
       <div className="title-underline" />
       <div
@@ -42,7 +40,8 @@ const NewsEntry = ({ data, id }) => {
         />
       </div>
       <div className="news-content">
-        <div
+        <p style={{ color: "#808080" }}>{data.birthTime}</p>
+        <span
           className="news-text"
           dangerouslySetInnerHTML={{
             __html: content.html,

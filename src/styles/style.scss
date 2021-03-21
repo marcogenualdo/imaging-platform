@@ -45,12 +45,24 @@ body {
   max-width: 50rem;
 }
 
+#sider {
+  border-right: 1px solid #f0f0f0;
+}
+
 #navbar {
   position: fixed;
   width: 300px;
-  transition: transform 0.1s linear;
 }
 
-.navbar-closed {
+.sider-closed {
   transform: translateX(-300px);
+}
+
+.ant-page-header-heading-title {
+  margin-left: 1rem;
+  margin-right: 6px;
+}
+
+.ant-page-header-heading-sub-title {
+  font-size: 20px;
 }
