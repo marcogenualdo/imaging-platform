@@ -63,6 +63,7 @@ const NewsPreview = ({ data }) => {
               __html: data.html,
             }}
           />
+          <div className="news-preview-text-fade" />
           <div className="read-more">Read more {">"}</div>
         </div>
       </Link>

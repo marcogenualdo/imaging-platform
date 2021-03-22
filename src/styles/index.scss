@@ -20,6 +20,8 @@
 }
 
 .head-banner {
+  position: relative;
+  z-index: 1;
   height: 10px;
   width: 100%;
   background-color: #ffc453;
@@ -96,6 +98,16 @@ section {
       color: $secondary;
       max-height: 110px;
       overflow: hidden;
+    }
+
+    .news-preview-text-fade {
+      height: 2.6rem;
+      position: absolute;
+      bottom: 2.6rem;
+      left: 0;
+      z-index: 500;
+      background-image: linear-gradient(to top, #fff, #fff0);
+      width: 100%;
     }
 
     .read-more {
