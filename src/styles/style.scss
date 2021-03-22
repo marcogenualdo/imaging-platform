@@ -31,12 +31,32 @@ body {
   display: flex;
 }
 
-.site-page-header {
+#page-header {
   background-color: #fff;
-  position: fixed;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   box-shadow: 0 0 0.4rem $secondary;
+  transition: height 0.2s linear;
+  height: 4.5rem;
+  position: fixed;
+  top: 0;
+  display: flex;
+}
+
+.header-hamburger {
+  border: none;
+  background-color: #fff;
+  margin: 1rem;
+  padding: 0.8rem;
+}
+
+.header-title {
+  margin: 1.5rem 0;
+}
+
+.header-subtitle {
+  margin: 1.5rem;
+  color: #808080;
 }
 
 #site-trunk {
@@ -50,8 +70,9 @@ body {
 }
 
 #navbar {
-  position: fixed;
   width: 300px;
+  position: sticky;
+  top: 4.5rem;
 }
 
 .sider-closed {
@@ -65,4 +86,8 @@ body {
 
 .ant-page-header-heading-sub-title {
   font-size: 20px;
+}
+
+.gatsby-image-wrapper {
+  display: block;
 }

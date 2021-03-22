@@ -8,7 +8,7 @@ import dnaBg from "../images/bg.svg";
 
 const IndexPage = ({ data }) => (
   <>
-    <header>
+    <header id="home-header">
       <GatsbyImage image={getImage(data.banner)} alt="" />
       <div className="title-wrap"></div>
       <h1 className="home-title">Imaging platform</h1>

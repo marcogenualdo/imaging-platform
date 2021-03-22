@@ -30,7 +30,6 @@ const Sidebar = ({ pageName, open }) => {
         defaultOpenKeys={["equipments-sub"]}
         mode="inline"
         id="navbar"
-        className={open ? "navbar-open" : "navbar-closed"}
       >
         <Menu.Item key="home" icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
