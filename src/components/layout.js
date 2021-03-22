@@ -10,16 +10,41 @@ import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import "../styles/style.scss";
 import Sidebar from "./navbar";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
 
-const PageHeader = ({ toggleMenu, pageName, scrolledPastHeader }) => {
+const PageHeader = ({ toggleMenu, pageName }) => {
+  const isHome = pageName === "home";
+  const [scrolledPastHeader, setScrolledPastHeader] = useState(!isHome);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const yScroll = document.scrollingElement.scrollTop;
+      if (isHome) {
+        const homeHeaderHeight =
+          document.getElementById("home-header")?.clientHeight ?? 0;
+        const pageHeaderHeight =
+          document.getElementById("page-header")?.clientHeight ?? 0;
+        setScrolledPastHeader(yScroll > homeHeaderHeight - pageHeaderHeight);
+      }
+    });
+  }, []);
+
+  const { banner } = useStaticQuery(graphql`
+    query {
+      banner: file(relativePath: { eq: "dna-banner.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 1920)
+        }
+      }
+    }
+  `);
+
   return (
     <>
       <div
         id="page-header"
-        style={{
-          position: scrolledPastHeader ? "fixed" : "relative",
-          display: scrolledPastHeader ? "flex" : "none",
-        }}
+        className={!isHome || scrolledPastHeader ? "page-header-down" : ""}
       >
         <button className="header-hamburger" onClick={toggleMenu}>
           <MenuOutlined />
@@ -27,28 +52,25 @@ const PageHeader = ({ toggleMenu, pageName, scrolledPastHeader }) => {
         <h3 className="header-title">Imaging Platform</h3>
         <h3 className="header-subtitle">{pageName}</h3>
       </div>
-      {scrolledPastHeader ? <div style={{ height: "4.5rem" }} /> : <></>}
+      {!isHome ? <div style={{ height: "4.5rem" }} /> : <></>}
+
+      {isHome ? (
+        <header id="home-header">
+          <GatsbyImage image={getImage(banner)} alt="" />
+          <div className="title-wrap"></div>
+          <h1 className="home-title">Imaging platform</h1>
+          <div className="head-banner"></div>
+        </header>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
 
 const Layout = ({ pageName, children }) => {
   const [menuOpen, setMenuOpen] = useState(true);
-  const isHome = pageName === "home";
-  const [scrolledPastHeader, setScrolledPastHeader] = useState(!isHome);
   const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const yScroll = document.scrollingElement.scrollTop;
-      if (isHome) {
-        const headerHeight =
-          document.getElementById("home-header")?.clientHeight ?? 0;
-        setScrolledPastHeader(yScroll > headerHeight);
-        console.log(yScroll, headerHeight);
-      }
-    });
-  }, []);
 
   return (
     <div>
@@ -56,7 +78,6 @@ const Layout = ({ pageName, children }) => {
         id="page-header"
         pageName={pageName}
         toggleMenu={toggleMenu}
-        scrolledPastHeader={scrolledPastHeader}
       />
       <div className="page-wrapper">
         <Sidebar pageName={pageName} open={menuOpen} />

@@ -8,12 +8,6 @@ import dnaBg from "../images/bg.svg";
 
 const IndexPage = ({ data }) => (
   <>
-    <header id="home-header">
-      <GatsbyImage image={getImage(data.banner)} alt="" />
-      <div className="title-wrap"></div>
-      <h1 className="home-title">Imaging platform</h1>
-      <div className="head-banner"></div>
-    </header>
     <Layout pageName="home">
       <img className="dna-bg" src={dnaBg} />
       <div className="content">
@@ -78,11 +72,6 @@ const NewsPreview = ({ data }) => {
 
 export const query = graphql`
   query {
-    banner: file(relativePath: { eq: "dna-banner.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(width: 1920)
-      }
-    }
     news: allFile(
       sort: { fields: birthTime, order: DESC }
       filter: { absolutePath: { regex: "/news//" } }
