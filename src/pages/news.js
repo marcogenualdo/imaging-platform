@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
+import SectionHeader from "../components/section-header";
 import "../styles/news.scss";
 import "../styles/style.scss";
 
@@ -22,10 +23,7 @@ const NewsEntry = ({ data, id }) => {
   const content = data.childMarkdownRemark;
   return (
     <div className="news-entry">
-      <div className="news-title-box">
-        <h1 className="news-title">{content.frontmatter.title}</h1>
-      </div>
-      <div className="title-underline" />
+      <SectionHeader title={content.frontmatter.title} />
       <div
         className="news-image"
         style={{

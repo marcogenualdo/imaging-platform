@@ -69,17 +69,18 @@ body {
 }
 
 #site-trunk {
-  margin: 0 auto;
-  padding: 2rem;
-  max-width: 50rem;
+  padding: 2rem 10%;
+  max-width: 100rem;
 }
 
 #sider {
   border-right: 1px solid #f0f0f0;
+  position: sticky;
 }
 
 #navbar {
   width: 300px;
+  height: calc(100vh - 5.5rem);
   position: sticky;
   top: 4.5rem;
 }
@@ -99,4 +100,11 @@ body {
 
 .gatsby-image-wrapper {
   display: block;
+}
+
+.title-underline {
+  height: 2px;
+  background-image: linear-gradient(to left, #fff0, $primary);
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }

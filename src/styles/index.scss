@@ -29,13 +29,6 @@
   box-shadow: 0 0 8px $secondary;
 }
 
-.title-underline {
-  height: 2px;
-  background-image: linear-gradient(to left, #fff0, $primary);
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .dna-bg {
   position: absolute;
   z-index: 0;
@@ -61,14 +54,13 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 1rem;
 }
 
 .news-preview-entry {
   margin: 1rem;
   box-shadow: 0.1rem 0.1rem 0.75rem #808080;
   border-radius: $card-radius;
-  flex: 0.4 0.4 14rem;
+  flex: 0.5 0 16rem;
 
   .news-preview-image {
     border-radius: $card-radius $card-radius 0 0;

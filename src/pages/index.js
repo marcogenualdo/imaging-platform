@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import "../styles/index.scss";
 import dnaBg from "../images/bg.svg";
+import SectionHeader from "../components/section-header";
 
 const IndexPage = ({ data }) => (
   <>
@@ -12,8 +13,7 @@ const IndexPage = ({ data }) => (
       <img className="dna-bg" src={dnaBg} />
       <div className="content">
         <section className="intro">
-          <h1>Leading Research</h1>
-          <div className="title-underline" />
+          <SectionHeader title="Leading Research" />
           <p className="intro-text">
             Lorem ipsum dolor sit amet,{" "}
             <strong>consectetur adipiscing elit</strong>, sed do eiusmod tempor
@@ -29,8 +29,7 @@ const IndexPage = ({ data }) => (
           </p>
         </section>
         <section id="news">
-          <h1>Latest News</h1>
-          <div className="title-underline" />
+          <SectionHeader title="Latest News" />
           <div className="news-preview-container">
             {data.news.nodes.map((item, index) => (
               <NewsPreview data={item.childMarkdownRemark} key={index} />
