@@ -5,12 +5,13 @@ import { graphql, useStaticQuery } from "gatsby";
 
 const PageHeader = ({ toggleMenu, pageName }) => {
   const isHome = pageName === "home";
-  const [scrolledPastHeader, setScrolledPastHeader] = useState(!isHome);
+  const hide = isHome && window.innerWidth > 920;
+  const [scrolledPastHeader, setScrolledPastHeader] = useState(!hide);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
       const yScroll = document.scrollingElement.scrollTop;
-      if (isHome) {
+      if (hide) {
         const homeHeaderHeight =
           document.getElementById("home-header")?.clientHeight ?? 0;
         const pageHeaderHeight =
@@ -35,7 +36,7 @@ const PageHeader = ({ toggleMenu, pageName }) => {
     <>
       <div
         id="page-header"
-        className={!isHome || scrolledPastHeader ? "page-header-down" : ""}
+        className={!hide || scrolledPastHeader ? "page-header-down" : ""}
       >
         <button className="header-hamburger" onClick={toggleMenu}>
           <MenuOutlined />
@@ -43,7 +44,7 @@ const PageHeader = ({ toggleMenu, pageName }) => {
         <h3 className="header-title">Imaging Platform</h3>
         <h3 className="header-subtitle">{pageName}</h3>
       </div>
-      {!isHome ? <div style={{ height: "4.5rem" }} /> : <></>}
+      {!hide ? <div style={{ height: "4.5rem" }} /> : <></>}
 
       {isHome ? (
         <header id="home-header">

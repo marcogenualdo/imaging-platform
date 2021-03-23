@@ -9,7 +9,7 @@ const Layout = ({ pageName, children }) => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <div>
+    <>
       <PageHeader
         id="page-header"
         pageName={pageName}
@@ -30,7 +30,7 @@ const Layout = ({ pageName, children }) => {
           </footer>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
