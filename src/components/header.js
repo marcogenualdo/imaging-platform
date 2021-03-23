@@ -17,7 +17,6 @@ const PageHeader = ({ toggleMenu, pageName }) => {
         const pageHeaderHeight =
           document.getElementById("page-header")?.clientHeight ?? 0;
         setScrolledPastHeader(yScroll > homeHeaderHeight - pageHeaderHeight);
-        console.log({ yScroll, homeHeaderHeight, pageHeaderHeight });
       }
     });
   }, []);
@@ -48,7 +47,11 @@ const PageHeader = ({ toggleMenu, pageName }) => {
 
       {isHome ? (
         <header id="home-header">
-          <GatsbyImage image={getImage(banner)} alt="" />
+          <GatsbyImage
+            className="home-header-carousel"
+            image={getImage(banner)}
+            alt=""
+          />
           <div className="title-wrap"></div>
           <h1 className="home-title">Imaging platform</h1>
           <div className="head-banner"></div>

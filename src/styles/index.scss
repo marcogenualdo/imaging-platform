@@ -97,7 +97,7 @@ section {
       position: absolute;
       bottom: 2.6rem;
       left: 0;
-      z-index: 500;
+      z-index: 2;
       background-image: linear-gradient(to top, #fff, #fff0);
       width: 100%;
     }
@@ -130,5 +130,15 @@ section {
 @media screen and (max-width: $phone-width) {
   .news-preview-entry {
     margin: 1rem 0;
+  }
+
+  .home-title {
+    left: 1rem;
+    bottom: 5.2rem;
+    font-size: 2.5rem;
+  }
+
+  .home-header-carousel {
+    height: 25vh;
   }
 }

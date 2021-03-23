@@ -75,7 +75,6 @@ body {
 
 #sider {
   border-right: 1px solid #f0f0f0;
-  height: 100vh;
   position: sticky;
   z-index: 5;
 }
@@ -100,6 +99,11 @@ body {
   font-size: 20px;
 }
 
+#home-header {
+  position: relative;
+  z-index: 50;
+}
+
 .gatsby-image-wrapper {
   display: block;
 }
@@ -115,6 +119,8 @@ body {
 @media screen and (max-width: $tablet-width) {
   #sider {
     position: fixed;
+    top: 0;
+    height: 100vh;
   }
 
   #navbar {
@@ -123,5 +129,9 @@ body {
 
   #site-trunk {
     padding: 2rem 1rem;
+  }
+
+  #home-header {
+    z-index: 2;
   }
 }
