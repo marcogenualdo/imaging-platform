@@ -24,9 +24,9 @@ const Layout = ({ pageName, children }) => {
               marginTop: `2rem`,
             }}
           >
-            © {new Date().getFullYear()}, Built with
+            © {new Date().getFullYear()}, this site is WIP. See the
             {` `}
-            <a href="https://www.gatsbyjs.com">Gatsby</a>
+            <a href="https://github.com/marcogenualdo/imaging-platform">repo</a>
           </footer>
         </div>
       </div>

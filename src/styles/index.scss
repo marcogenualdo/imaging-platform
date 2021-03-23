@@ -30,11 +30,11 @@
 }
 
 .dna-bg {
-  position: absolute;
+  position: fixed;
   z-index: 0;
-  width: 100%;
-  right: -27rem;
-  top: -11rem;
+  width: 40%;
+  right: 0;
+  top: -2rem;
   opacity: 6.8%;
 }
 
@@ -140,5 +140,9 @@ section {
 
   .home-header-carousel {
     height: 25vh;
+  }
+
+  .dna-bg {
+    display: none;
   }
 }
