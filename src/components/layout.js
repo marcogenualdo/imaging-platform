@@ -22,6 +22,7 @@ const Layout = ({ pageName, children }) => {
             className="dark-layer"
             style={{
               opacity: menuOpen && !openWidth ? 1 : 0,
+              zIndex: menuOpen && !openWidth ? 4 : 0,
             }}
           />
           <main>{children}</main>
