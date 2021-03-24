@@ -32,6 +32,7 @@ const PageHeader = ({ toggleMenu, pageName }) => {
           <MenuOutlined />
         </button>
         <h3 className="header-title">Imaging Platform</h3>
+        <h3 className="header-slash">/</h3>
         <h3 className="header-subtitle">{pageName}</h3>
       </div>
       {!hide ? <div style={{ height: "4.5rem" }} /> : <></>}
