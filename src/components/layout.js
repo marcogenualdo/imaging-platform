@@ -26,14 +26,15 @@ const Layout = ({ pageName, children }) => {
             }}
           />
           <main>{children}</main>
-          <footer
-            style={{
-              marginTop: `2rem`,
-            }}
-          >
+          <footer>
             © {new Date().getFullYear()}, this site is WIP. See the
             {` `}
-            <a href="https://github.com/marcogenualdo/imaging-platform">repo</a>
+            <a
+              href="https://github.com/marcogenualdo/imaging-platform"
+              target="blank"
+            >
+              repo
+            </a>
           </footer>
         </div>
       </div>

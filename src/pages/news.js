@@ -22,7 +22,7 @@ const NewsEntry = ({ data, id }) => {
   const isEven = id % 2;
   const content = data.childMarkdownRemark;
   return (
-    <div className="news-entry">
+    <div className="news-entry" id={content.frontmatter.title}>
       <SectionHeader title={content.frontmatter.title} />
       <div
         className="news-image"

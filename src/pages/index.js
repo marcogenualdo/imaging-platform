@@ -1,11 +1,12 @@
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
-import "../styles/index.scss";
-import dnaBg from "../images/bg.svg";
 import SectionHeader from "../components/section-header";
+import SEO from "../components/seo";
+import dnaBg from "../images/bg.svg";
+import "../styles/index.scss";
 
 const IndexPage = ({ data }) => (
   <>
@@ -38,7 +39,7 @@ const IndexPage = ({ data }) => (
 const NewsPreview = ({ data }) => {
   return (
     <div className="news-preview-entry">
-      <Link to="/news">
+      <AnchorLink to={`/news#${data.frontmatter.title}`}>
         <div className="news-preview-image">
           <GatsbyImage
             className="news-preview-image"
@@ -58,7 +59,7 @@ const NewsPreview = ({ data }) => {
           <div className="news-preview-text-fade" />
           <div className="read-more">Read more {">"}</div>
         </div>
-      </Link>
+      </AnchorLink>
     </div>
   );
 };
