@@ -14,19 +14,12 @@ const IndexPage = ({ data }) => (
       <div className="content">
         <section className="intro">
           <SectionHeader title="Leading Research" />
-          <p className="intro-text">
-            Lorem ipsum dolor sit amet,{" "}
-            <strong>consectetur adipiscing elit</strong>, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.{" "}
-            <strong>
-              Duis aute irure dolor in reprehenderit in voluptate velit
-            </strong>{" "}
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </p>
+          <div
+            className="intro-text"
+            dangerouslySetInnerHTML={{
+              __html: data.intro.childMarkdownRemark.html,
+            }}
+          />
         </section>
         <section id="news">
           <SectionHeader title="Latest News" />
@@ -72,6 +65,11 @@ const NewsPreview = ({ data }) => {
 
 export const query = graphql`
   query {
+    intro: file(relativePath: { eq: "home-intro.md" }) {
+      childMarkdownRemark {
+        html
+      }
+    }
     news: allFile(
       sort: { fields: birthTime, order: DESC }
       filter: { absolutePath: { regex: "/news//" } }

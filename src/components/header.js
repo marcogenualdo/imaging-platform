@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
+import { Carousel } from "antd";
 
 const PageHeader = ({ toggleMenu, pageName }) => {
   const isHome = pageName === "home";
@@ -21,16 +22,6 @@ const PageHeader = ({ toggleMenu, pageName }) => {
     });
   }, []);
 
-  const { banner } = useStaticQuery(graphql`
-    query {
-      banner: file(relativePath: { eq: "dna-banner.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(width: 1920)
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <div
@@ -45,21 +36,50 @@ const PageHeader = ({ toggleMenu, pageName }) => {
       </div>
       {!hide ? <div style={{ height: "4.5rem" }} /> : <></>}
 
-      {isHome ? (
-        <header id="home-header">
+      {isHome ? <HomeHeader /> : <></>}
+    </>
+  );
+};
+
+const HomeHeader = () => {
+  const { banners } = useStaticQuery(graphql`
+    query {
+      banners: allFile(filter: { absolutePath: { regex: "/carousel//" } }) {
+        nodes {
+          childMarkdownRemark {
+            frontmatter {
+              featuredImage {
+                childImageSharp {
+                  gatsbyImageData(width: 1920)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <header id="home-header">
+      <Carousel
+        autoplay
+        effect="fade"
+        dotPosition="top"
+        className="home-carousel"
+      >
+        {banners.nodes.map((item) => (
           <GatsbyImage
-            className="home-header-carousel"
-            image={getImage(banner)}
+            className="carousel-image"
+            image={getImage(item.childMarkdownRemark.frontmatter.featuredImage)}
             alt=""
           />
-          <div className="title-wrap"></div>
-          <h1 className="home-title">Imaging platform</h1>
-          <div className="head-banner"></div>
-        </header>
-      ) : (
-        <></>
-      )}
-    </>
+        ))}
+      </Carousel>
+      <div className="title-wrap"></div>
+      <h1 className="home-title">Imaging platform</h1>
+      <div className="head-banner"></div>
+    </header>
   );
 };
 

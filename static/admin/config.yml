@@ -8,6 +8,13 @@ public_folder: content/uploads
 locale: it
 
 collections:
+  - name: 'carousel'
+    label: 'Home Carousel'
+    folder: 'content/carousel'
+    create: true
+    # slug: 'index'
+    fields:
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
   - name: 'news'
     label: 'News'
     folder: 'content/news'
