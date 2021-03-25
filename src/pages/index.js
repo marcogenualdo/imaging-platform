@@ -11,7 +11,7 @@ import "../styles/index.scss";
 const IndexPage = ({ data }) => (
   <>
     <Layout pageName="home">
-      <img className="dna-bg" src={dnaBg} />
+      <img className="dna-bg" src={dnaBg} alt="" />
       <div className="content">
         <section className="intro">
           <SectionHeader title="Leading Research" />
