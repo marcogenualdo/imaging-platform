@@ -4,8 +4,7 @@ import Sidebar from "./navbar";
 import PageHeader from "./header";
 
 const Layout = ({ pageName, children }) => {
-  const openWidth = window.innerWidth > 920;
-  const [menuOpen, setMenuOpen] = useState(openWidth);
+  const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
@@ -18,13 +17,7 @@ const Layout = ({ pageName, children }) => {
       <div className="page-wrapper">
         <Sidebar pageName={pageName} open={menuOpen} />
         <div id="site-trunk">
-          <div
-            className="dark-layer"
-            style={{
-              opacity: menuOpen && !openWidth ? 1 : 0,
-              zIndex: menuOpen && !openWidth ? 4 : 0,
-            }}
-          />
+          <div className={`dark-layer ${menuOpen ? "dark-layer-show" : ""}`} />
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, this site is WIP. See the

@@ -91,10 +91,6 @@ body {
   top: 4.5rem;
 }
 
-.sider-closed {
-  transform: translateX(-300px);
-}
-
 .ant-page-header-heading-title {
   margin-left: 1rem;
   margin-right: 6px;
@@ -128,6 +124,13 @@ body {
   left: 0;
   background-color: #0005;
   transition: opacity 0.5s ease-in;
+  opacity: 0;
+  z-index: 0;
+}
+
+.dark-layer-show {
+  opacity: 0;
+  z-index: 0;
 }
 
 footer {
@@ -155,5 +158,22 @@ footer {
 
   #home-header {
     z-index: 2;
+  }
+
+  #page-header {
+    top: 0;
+  }
+
+  .page-header-down {
+    transform: unset;
+  }
+
+  .sider-closed {
+    transform: translateX(-300px);
+  }
+
+  .dark-layer-show {
+    opacity: 1;
+    z-index: 4;
   }
 }
