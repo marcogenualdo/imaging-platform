@@ -35,8 +35,8 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify-cms-paths`,
+    // `gatsby-plugin-netlify-cms`,
+    // `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
