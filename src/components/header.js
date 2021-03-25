@@ -19,7 +19,7 @@ const PageHeader = ({ toggleMenu, pageName }) => {
         setScrolledPastHeader(yScroll > homeHeaderHeight - pageHeaderHeight);
       }
     });
-  }, []);
+  });
 
   return (
     <>
@@ -34,7 +34,7 @@ const PageHeader = ({ toggleMenu, pageName }) => {
         <h3 className="header-slash">/</h3>
         <h3 className="header-subtitle">{pageName}</h3>
       </div>
-      {scrolledPastHeader ? <div style={{ height: "4.5rem" }} /> : <></>}
+      <div className={!isHome ? "header-filler" : "header-filler-hide"} />
 
       {isHome ? <HomeHeader /> : <></>}
     </>
