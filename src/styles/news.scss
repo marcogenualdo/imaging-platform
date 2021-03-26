@@ -17,3 +17,10 @@
 .news-text {
   text-align: justify;
 }
+
+// phone
+@media screen and (max-width: $phone-width) {
+  .news-image {
+    width: 100%;
+  }
+}
