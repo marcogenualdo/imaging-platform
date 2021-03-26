@@ -3,6 +3,8 @@ import { MenuOutlined } from "@ant-design/icons";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { Carousel } from "antd";
+import "../styles/header.scss";
+import "../styles/style.scss";
 
 const PageHeader = ({ toggleMenu, pageName }) => {
   const isHome = pageName === "home";
@@ -68,11 +70,12 @@ const HomeHeader = () => {
         dotPosition="top"
         className="home-carousel"
       >
-        {banners.nodes.map((item) => (
+        {banners.nodes.map((item, index) => (
           <GatsbyImage
             className="carousel-image"
             image={getImage(item.childMarkdownRemark.frontmatter.featuredImage)}
             alt=""
+            key={index}
           />
         ))}
       </Carousel>

@@ -3,114 +3,43 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 
-  a {
-    color: $primary;
-  }
+a {
+  color: $primary;
+}
 
-  h1,
-  h2,
-  h3 {
-    margin-bottom: 0;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
-    line-height: 1.1;
-  }
+h1,
+h2,
+h3 {
+  margin-bottom: 0;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  line-height: 1.1;
+}
 
-  h1 {
-    font-size: 2.25rem;
-  }
+h1 {
+  font-size: 2.25rem;
+}
 
-  h3 {
-    font-size: 1.38316rem;
-  }
+h3 {
+  font-size: 1.38316rem;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+footer {
+  margin-top: 2rem;
+  // just because the dark layer prevented clicking
+  position: relative;
+  z-index: 3;
 }
 
 .page-wrapper {
   position: relative;
   display: flex;
-}
-
-#page-header {
-  background-color: #fff;
-  z-index: 10;
-  width: 100vw;
-  box-shadow: 0 0 0.4rem $secondary;
-  transition: transform 0.2s ease-in;
-  height: 4.5rem;
-  position: fixed;
-  top: -4.5rem;
-  display: flex;
-}
-
-.page-header-down {
-  transform: translateY(4.5rem);
-}
-
-.header-hamburger {
-  border: none;
-  background-color: #fff;
-  margin: 1rem;
-  padding: 0.8rem;
-
-  .anticon svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-.header-title {
-  margin: 1.5rem 0;
-}
-
-.header-slash {
-  margin: 1.5rem 1rem;
-  color: #808080;
-}
-
-.header-subtitle {
-  margin: 1.5rem 0;
-  color: #808080;
-}
-
-.header-filler {
-  height: 4.5rem;
-}
-
-.header-filler-hide {
-  height: 0;
-}
-
-#site-trunk {
-  padding: 2rem 10%;
-  max-width: 100rem;
-}
-
-#sider {
-  border-right: 1px solid #f0f0f0;
-  position: sticky;
-  z-index: 5;
-}
-
-#navbar {
-  width: 300px;
-  height: calc(100vh - 5.5rem);
-  position: sticky;
-  top: 4.5rem;
-}
-
-.ant-page-header-heading-title {
-  margin-left: 1rem;
-  margin-right: 6px;
-}
-
-.ant-page-header-heading-sub-title {
-  font-size: 20px;
-}
-
-#home-header {
-  position: relative;
-  z-index: 50;
 }
 
 .gatsby-image-wrapper {
@@ -122,80 +51,4 @@ body {
   background-image: linear-gradient(to left, #fff0, $primary);
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
-}
-
-.dark-layer {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #0005;
-  transition: opacity 0.5s ease-in;
-  opacity: 0;
-  z-index: 0;
-}
-
-.dark-layer-show {
-  opacity: 0;
-  z-index: 0;
-}
-
-footer {
-  margin-top: 2rem;
-  // just because the dark layer prevented clicking
-  position: relative;
-  z-index: 3;
-}
-
-// tablet
-@media screen and (max-width: $tablet-width) {
-  #sider {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-  }
-
-  #navbar {
-    position: fixed;
-  }
-
-  #site-trunk {
-    padding: 2rem 1rem;
-  }
-
-  #home-header {
-    z-index: 2;
-  }
-
-  #page-header {
-    top: 0;
-  }
-
-  .page-header-down {
-    transform: unset;
-  }
-
-  .sider-closed {
-    transform: translateX(-300px);
-  }
-
-  .dark-layer-show {
-    opacity: 1;
-    z-index: 4;
-  }
-
-  .header-filler-hide {
-    height: 4.5rem;
-  }
-}
-
-// phone
-@media screen and (max-width: $phone-width) {
-  .header-slash {
-    display: none;
-  }
-  .header-subtitle {
-    display: none;
-  }
 }

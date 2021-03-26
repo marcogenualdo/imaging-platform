@@ -1,0 +1,62 @@
+@import "./variables";
+
+#site-trunk {
+  padding: 2rem 10%;
+  max-width: 100rem;
+}
+
+#sider {
+  border-right: 1px solid #f0f0f0;
+  position: sticky;
+  z-index: 5;
+}
+
+#navbar {
+  width: 300px;
+  height: calc(100vh - 5.5rem);
+  position: sticky;
+  top: 4.5rem;
+}
+
+.dark-layer {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0005;
+  transition: opacity 0.5s ease-in;
+  opacity: 0;
+  z-index: 0;
+}
+
+.dark-layer-show {
+  opacity: 0;
+  z-index: 0;
+}
+
+// tablet
+@media screen and (max-width: $tablet-width) {
+  #sider {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+  }
+
+  #navbar {
+    position: fixed;
+  }
+
+  #site-trunk {
+    padding: 2rem 1rem;
+  }
+
+  .sider-closed {
+    transform: translateX(-300px);
+  }
+
+  .dark-layer-show {
+    opacity: 1;
+    z-index: 4;
+  }
+}

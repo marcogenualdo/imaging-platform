@@ -11,6 +11,8 @@ import "antd/dist/antd.css";
 import Sider from "antd/lib/layout/Sider";
 import { Link } from "gatsby";
 import React from "react";
+import "../styles/sider.scss";
+import "../styles/style.scss";
 
 const Sidebar = ({ pageName, open }) => {
   const handleClick = (e) => {

@@ -7,6 +7,7 @@ import SectionHeader from "../components/section-header";
 import SEO from "../components/seo";
 import dnaBg from "../images/bg.svg";
 import "../styles/index.scss";
+import "../styles/style.scss";
 
 const IndexPage = ({ data }) => (
   <>

@@ -1,6 +1,10 @@
 @import "./style";
 @import "./variables";
 
+#home-header {
+  position: relative;
+}
+
 .home-title {
   color: white;
   position: absolute;
@@ -44,12 +48,7 @@
   z-index: 0;
   right: 0;
   top: 3rem;
-  opacity: 0.1;
   height: 100vh;
-}
-
-section {
-  padding: 2rem 0;
 }
 
 .intro-text {
@@ -130,9 +129,14 @@ section {
 
 // tablet
 @media screen and (max-width: $tablet-width) {
+  #home-header {
+    z-index: 2;
+  }
+
   .home-title {
     left: 1rem;
     font-size: 3rem;
+    display: none;
   }
 
   .intro-text {
