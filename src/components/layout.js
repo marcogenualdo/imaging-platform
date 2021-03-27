@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/style.scss";
-import Sidebar from "./navbar";
+import Sidebar from "./sidebar";
 import PageHeader from "./header";
 
 const Layout = ({ pageName, children }) => {
