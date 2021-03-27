@@ -15,6 +15,7 @@ collections:
     # slug: 'index'
     fields:
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
+
   - name: 'news'
     label: 'News'
     folder: 'content/news'
@@ -24,3 +25,13 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'tutorials'
+    label: 'tutorials'
+    folder: 'content/tutorials'
+    create: true
+    # slug: 'index'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Link to video', name: 'videoLink', widget: 'string' }
+      - { label: 'Description', name: 'body', widget: 'markdown' }
