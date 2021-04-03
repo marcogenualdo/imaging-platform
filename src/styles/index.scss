@@ -75,6 +75,10 @@
     border-radius: $card-radius $card-radius 0 0;
     height: 15rem;
 
+    img {
+      border-radius: $card-radius $card-radius 0 0;
+    }
+
     .gatsby-image-wrapper {
       height: 100%;
     }
