@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Carousel } from "antd";
 import "../styles/header.scss";
 import "../styles/style.scss";
+import ibpmLogo from "../images/logo-ibpm.png";
 
 const PageHeader = ({ toggleMenu, pageName }) => {
   const isHome = pageName === "home";
@@ -32,13 +33,16 @@ const PageHeader = ({ toggleMenu, pageName }) => {
         <button className="header-hamburger" onClick={toggleMenu}>
           <MenuOutlined />
         </button>
+        <div className="header-logo">
+          <img src={ibpmLogo} />
+        </div>
         <h3 className="header-title">Imaging Platform</h3>
         <h3 className="header-slash">/</h3>
         <h3 className="header-subtitle">{pageName}</h3>
       </div>
       <div className={!isHome ? "header-filler" : "header-filler-hide"} />
 
-      {isHome ? <HomeHeader /> : <></>}
+      {isHome && <HomeHeader />}
     </>
   );
 };
