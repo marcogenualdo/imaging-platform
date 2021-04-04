@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Carousel } from "antd";
 import "../styles/header.scss";
 import "../styles/style.scss";
-import ibpmLogo from "../images/logo-ibpm.png";
+import ibpmLogo from "../images/logo-ibpm.svg";
 
 const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
   const isHome = pageName === "home";
