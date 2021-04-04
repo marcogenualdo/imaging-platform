@@ -12,6 +12,7 @@ const Layout = ({ pageName, children }) => {
       <PageHeader
         id="page-header"
         pageName={pageName}
+        menuOpen={menuOpen}
         toggleMenu={toggleMenu}
       />
       <div className="page-wrapper">

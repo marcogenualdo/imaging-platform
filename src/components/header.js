@@ -7,20 +7,34 @@ import "../styles/header.scss";
 import "../styles/style.scss";
 import ibpmLogo from "../images/logo-ibpm.png";
 
-const PageHeader = ({ toggleMenu, pageName }) => {
+const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
   const isHome = pageName === "home";
-  const [scrolledPastHeader, setScrolledPastHeader] = useState(!isHome);
+  const [showPageHeader, setShowPageHeader] = useState(!isHome);
 
   useEffect(() => {
+    const pageWidth = window.innerWidth;
+
+    // block scroll on menu open for mobile
+    if (menuOpen && pageWidth <= 920) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+
     document.addEventListener("scroll", () => {
+      let willShowHeader = true;
       const yScroll = document.scrollingElement.scrollTop;
+
+      // only show page header if past carousel
       if (isHome) {
         const homeHeaderHeight =
           document.getElementById("home-header")?.clientHeight ?? 0;
         const pageHeaderHeight =
           document.getElementById("page-header")?.clientHeight ?? 0;
-        setScrolledPastHeader(yScroll > homeHeaderHeight - pageHeaderHeight);
+        willShowHeader = yScroll > homeHeaderHeight - pageHeaderHeight;
       }
+
+      setShowPageHeader(willShowHeader);
     });
   });
 
@@ -28,13 +42,13 @@ const PageHeader = ({ toggleMenu, pageName }) => {
     <>
       <div
         id="page-header"
-        className={scrolledPastHeader ? "page-header-down" : ""}
+        className={showPageHeader ? "page-header-down" : ""}
       >
         <button className="header-hamburger" onClick={toggleMenu}>
           <MenuOutlined />
         </button>
         <div className="header-logo">
-          <img src={ibpmLogo} />
+          <img src={ibpmLogo} alt="" />
         </div>
         <h3 className="header-title">Imaging Platform</h3>
         <h3 className="header-slash">/</h3>
