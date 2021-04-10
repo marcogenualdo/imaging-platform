@@ -22,7 +22,7 @@ const Sidebar = ({ pageName, open }) => {
   return (
     <Sider
       theme="light"
-      width={300}
+      width="18rem"
       className={open ? "sider-open" : "sider-closed"}
       id="sider"
     >

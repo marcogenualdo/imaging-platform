@@ -13,6 +13,18 @@
   text-shadow: 0 0 4px black;
   font-size: 4rem;
   font-weight: 700;
+  animation: title-drop ease-out 0.5s;
+}
+
+@keyframes title-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: unset;
+  }
 }
 
 .title-wrap {

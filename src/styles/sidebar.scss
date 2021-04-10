@@ -11,7 +11,7 @@
 }
 
 #navbar {
-  width: 300px;
+  width: $sider-width;
   height: calc(100vh - 5.5rem);
   position: sticky;
   top: 4.5rem;
@@ -51,7 +51,7 @@
   }
 
   .sider-closed {
-    transform: translateX(-300px);
+    transform: translateX(-$sider-width);
   }
 
   .dark-layer-show {
