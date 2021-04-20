@@ -54,7 +54,10 @@ const NewsEntry = ({ data, id }) => {
 export const query = graphql`
   query {
     news: allFile(
-      sort: { fields: birthTime, order: DESC }
+      sort: {
+        fields: childrenMarkdownRemark___frontmatter___order
+        order: DESC
+      }
       filter: { absolutePath: { regex: "/news//" } }
     ) {
       nodes {
@@ -67,6 +70,7 @@ export const query = graphql`
               }
             }
             title
+            order
           }
           html
         }

@@ -1,6 +1,7 @@
 ---
-title: Story 1
-featuredImage: ../uploads/news-img-1.jpg
+title: New grant from Regione Lazio to develop 3D high-content imaging methodologies
+featuredImage: ../uploads/news1.jpg
+order: 5
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+The project “Metodologie innovative di 3D high content imaging per la validazione di nuove molecole antitumorali” coordinated by Dr Francesca Degrassi has been funded by Regione Lazio within the Call “Progetti Gruppi di Ricerca 2020”.

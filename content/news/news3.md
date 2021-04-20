@@ -1,6 +1,7 @@
 ---
-title: Story 3
-featuredImage: ../uploads/news-img-4.jpg
+title: Workshop – Artificial intelligence and automation meet cellular imaging in biomedical research
+featuredImage: ../uploads/news3.jpg
+order: 3
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Cellular imaging is undergoing an unprecedented development that has greatly amplified its informative power with the introduction of machine learning, artificial intelligence-based approaches and quantitative data analysis. The workshop has explored the application of these methods in as diverse cell biology fields as cell migration a, morphological reconstruction of subcellular structures, and use of model organism- and cell-based assays in genetic and drug screening.

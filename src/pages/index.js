@@ -73,7 +73,10 @@ export const query = graphql`
       }
     }
     news: allFile(
-      sort: { fields: birthTime, order: DESC }
+      sort: {
+        fields: childrenMarkdownRemark___frontmatter___order
+        order: DESC
+      }
       filter: { absolutePath: { regex: "/news//" } }
     ) {
       nodes {
