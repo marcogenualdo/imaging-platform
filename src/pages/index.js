@@ -67,7 +67,7 @@ const NewsPreview = ({ data }) => {
 
 export const query = graphql`
   query {
-    intro: file(relativePath: { eq: "home-intro.md" }) {
+    intro: file(relativePath: { eq: "home/intro.md" }) {
       childMarkdownRemark {
         html
       }

@@ -12,15 +12,33 @@ collections:
     label: 'Home Carousel'
     folder: 'content/carousel'
     create: true
-    # slug: 'index'
     fields:
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
+
+  - name: 'home-intro'
+    label: 'Home Intro'
+    create: false
+    files:
+      - name: 'home-intro'
+        label: 'Home Intro'
+        file: 'content/home/intro.md'
+        fields:
+          - { label: 'Text', name: 'body', widget: 'markdown' }
+
+  - name: 'access'
+    label: 'Access'
+    create: false
+    files:
+      - name: 'access'
+        label: 'Access'
+        file: 'content/access/access.md'
+        fields:
+          - { label: 'Text', name: 'body', widget: 'markdown' }
 
   - name: 'news'
     label: 'News'
     folder: 'content/news'
     create: true
-    # slug: 'index'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
@@ -30,8 +48,17 @@ collections:
     label: 'tutorials'
     folder: 'content/tutorials'
     create: true
-    # slug: 'index'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Link to video', name: 'videoLink', widget: 'string' }
       - { label: 'Description', name: 'body', widget: 'markdown' }
+
+  - name: 'contacts'
+    label: 'contacts'
+    create: false
+    files:
+      - name: 'contacts'
+        label: 'Contacts'
+        file: 'content/contacts.md'
+        fields:
+          - { label: 'Text (format contacts as a list, emails as BOLD)', name: 'body', widget: 'markdown' }
