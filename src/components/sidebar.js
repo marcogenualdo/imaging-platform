@@ -54,7 +54,7 @@ const Sidebar = ({ pageName, open }) => {
             <Link to="/access">Access</Link>
           </Menu.Item>
           <Menu.Item key="faq">
-            <Link to="/faq">Guidelines & FAQs</Link>
+            <Link to="/guidelines-faq">Guidelines & FAQs</Link>
           </Menu.Item>
           <Menu.Item key="tutorials">
             <Link to="/tutorials">Tutorials</Link>

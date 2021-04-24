@@ -35,6 +35,17 @@ collections:
         fields:
           - { label: 'Text', name: 'body', widget: 'markdown' }
 
+  - name: 'guidelines'
+    label: 'Guidelines'
+    create: false
+    files:
+      - name: 'guidelines'
+        label: 'Guidelines'
+        file: 'content/guidelines/guidelines.md'
+        fields:
+          - { label: 'Text', name: 'body', widget: 'markdown' }
+
+
   - name: 'news'
     label: 'News'
     folder: 'content/news'

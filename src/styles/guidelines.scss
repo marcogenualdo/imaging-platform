@@ -1,0 +1,13 @@
+@import "./variables";
+
+.guidelines-doc {
+  text-align: justify;
+
+  ol {
+    padding-left: 1rem;
+
+    li {
+      padding: 0.5rem 0;
+    }
+  }
+}

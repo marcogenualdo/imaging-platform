@@ -2,15 +2,15 @@ import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import SectionHeader from "../components/section-header";
-import "../styles/guidelines.scss";
 import "../styles/style.scss";
+import "../styles/guidelines.scss";
 
-const AccessPage = ({ data }) => {
-  const content = data.access.childMarkdownRemark;
+const GuidelinesFAQPage = ({ data }) => {
+  const content = data.guidelines.childMarkdownRemark;
 
   return (
-    <Layout pageName="access">
-      <SectionHeader title="Access" />
+    <Layout pageName="guidelines">
+      <SectionHeader title={content.frontmatter.title} />
       <span
         className="guidelines-doc"
         dangerouslySetInnerHTML={{
@@ -23,11 +23,14 @@ const AccessPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    access: file(relativePath: { eq: "access/access.md" }) {
+    guidelines: file(relativePath: { eq: "guidelines/guidelines.md" }) {
       childMarkdownRemark {
+        frontmatter {
+          title
+        }
         html
       }
     }
   }
 `;
-export default AccessPage;
+export default GuidelinesFAQPage;
