@@ -34,8 +34,9 @@
   width: 4.5rem;
   margin: 0 1rem;
 
-  img {
+  svg {
     height: 100%;
+    width: 100%;
   }
 }
 
@@ -99,5 +100,9 @@
 
   .header-subtitle {
     display: none;
+  }
+
+  .header-logo {
+    margin: 0 0.5rem;
   }
 }

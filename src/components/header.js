@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Carousel } from "antd";
 import "../styles/header.scss";
 import "../styles/style.scss";
-import ibpmLogo from "../images/logo-ibpm.svg";
+import IbpmLogo from "../images/logo-ibpm.svg";
 
 const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
   const isHome = pageName === "home";
@@ -48,7 +48,7 @@ const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
           <MenuOutlined />
         </button>
         <div className="header-logo">
-          <img src={ibpmLogo} alt="" />
+          <IbpmLogo />
         </div>
         <h3 className="header-title">Imaging Platform</h3>
         <h3 className="header-slash">/</h3>

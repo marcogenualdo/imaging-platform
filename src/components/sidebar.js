@@ -1,6 +1,5 @@
 import {
   BorderlessTableOutlined,
-  ExperimentOutlined,
   HomeOutlined,
   PaperClipOutlined,
   PhoneOutlined,
@@ -11,8 +10,15 @@ import "antd/dist/antd.css";
 import Sider from "antd/lib/layout/Sider";
 import { Link } from "gatsby";
 import React from "react";
+import MicroscopeSvg from "../images/microscope-icon.svg";
 import "../styles/sidebar.scss";
 import "../styles/style.scss";
+
+const MicroscopeIcon = () => (
+  <span className="anticon" style={{ width: "1rem", height: "1rem" }}>
+    <MicroscopeSvg />
+  </span>
+);
 
 const Sidebar = ({ pageName, open }) => {
   const handleClick = (e) => {
@@ -29,23 +35,23 @@ const Sidebar = ({ pageName, open }) => {
       <Menu
         onClick={handleClick}
         defaultSelectedKeys={[pageName]}
-        defaultOpenKeys={["equipments-sub"]}
+        defaultOpenKeys={["equipment-sub"]}
         mode="inline"
         id="navbar"
       >
         <Menu.Item key="home" icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>
-        <Menu.Item key="news" icon={<BorderlessTableOutlined />}>
-          <Link to="/news">News</Link>
-        </Menu.Item>
         <Menu.SubMenu
-          key="equipments-sub"
-          icon={<ExperimentOutlined />}
-          title="Equipments"
+          key="equipment-sub"
+          icon={<MicroscopeIcon />}
+          title="Equipment"
         >
-          <Menu.Item key="equipments">
-            <Link to="/equipments">Equipments</Link>
+          <Menu.Item key="equipment">
+            <Link to="/equipment">Equipment</Link>
+          </Menu.Item>
+          <Menu.Item key="access">
+            <Link to="/access">Access</Link>
           </Menu.Item>
           <Menu.Item key="faq">
             <Link to="/faq">Guidelines & FAQs</Link>
@@ -54,14 +60,17 @@ const Sidebar = ({ pageName, open }) => {
             <Link to="/tutorials">Tutorials</Link>
           </Menu.Item>
         </Menu.SubMenu>
-        <Menu.Item key="contacts" icon={<PhoneOutlined />}>
-          <Link to="/contacts">Contacts</Link>
+        <Menu.Item key="partners" icon={<TeamOutlined />}>
+          <Link to="/partners">Partners</Link>
+        </Menu.Item>
+        <Menu.Item key="news" icon={<BorderlessTableOutlined />}>
+          <Link to="/news">News</Link>
         </Menu.Item>
         <Menu.Item key="publications" icon={<PaperClipOutlined />}>
           <Link to="/publications">Publications</Link>
         </Menu.Item>
-        <Menu.Item key="partners" icon={<TeamOutlined />}>
-          <Link to="/partners">Partners</Link>
+        <Menu.Item key="contacts" icon={<PhoneOutlined />}>
+          <Link to="/contacts">Contacts</Link>
         </Menu.Item>
       </Menu>
     </Sider>
