@@ -47,18 +47,20 @@ const Sidebar = ({ pageName, open }) => {
           icon={<MicroscopeIcon />}
           title="Equipment"
         >
-          <Menu.Item key="equipment">
-            <Link to="/equipment">Equipment</Link>
-          </Menu.Item>
-          <Menu.Item key="access">
-            <Link to="/access">Access</Link>
-          </Menu.Item>
-          <Menu.Item key="faq">
-            <Link to="/guidelines-faq">Guidelines & FAQs</Link>
-          </Menu.Item>
-          <Menu.Item key="tutorials">
-            <Link to="/tutorials">Tutorials</Link>
-          </Menu.Item>
+          <Menu.ItemGroup subMenuKey="equipment-sub">
+            <Menu.Item key="equipment">
+              <Link to="/equipment">Equipment</Link>
+            </Menu.Item>
+            <Menu.Item key="access">
+              <Link to="/access">Access</Link>
+            </Menu.Item>
+            <Menu.Item key="guidelines">
+              <Link to="/guidelines">Guidelines & FAQs</Link>
+            </Menu.Item>
+            <Menu.Item key="tutorials">
+              <Link to="/tutorials">Tutorials</Link>
+            </Menu.Item>
+          </Menu.ItemGroup>
         </Menu.SubMenu>
         <Menu.Item key="partners" icon={<TeamOutlined />}>
           <Link to="/partners">Partners</Link>

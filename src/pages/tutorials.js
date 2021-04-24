@@ -16,7 +16,7 @@ const TutorialEntry = ({ data }) => {
         title={markdown.frontmatter.title}
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-        allowfullscreen={true}
+        allowFullScreen={true}
       ></iframe>
       <div
         className="news-text"

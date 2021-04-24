@@ -3,6 +3,10 @@
 .guidelines-doc {
   text-align: justify;
 
+  strong {
+    text-decoration: underline solid #ffc453 1px;
+  }
+
   ol {
     padding-left: 1rem;
 
