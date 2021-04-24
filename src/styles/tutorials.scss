@@ -5,14 +5,13 @@
 }
 
 .tutorial-entry-video {
-  width: 60vw;
+  width: 100%;
   height: 32vw;
 }
 
 // tablet
 @media screen and (max-width: $tablet-width) {
   .tutorial-entry-video {
-    width: 100%;
     height: 50vw;
   }
 }
