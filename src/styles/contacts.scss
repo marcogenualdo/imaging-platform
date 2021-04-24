@@ -1,0 +1,56 @@
+@import "./variables";
+
+.contacts-map {
+  border: 0;
+  width: 100%;
+  height: 20rem;
+}
+
+.contacts-col {
+  padding-right: 1rem;
+}
+
+.map-col {
+  padding-left: 1rem;
+}
+
+.contacts-text {
+  ul {
+    padding-left: 1rem;
+    list-style: circle;
+
+    li {
+      margin: 0.6rem 0;
+      color: #505050;
+    }
+  }
+  strong {
+    display: block;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    color: $primary;
+    padding: 0 0.3rem;
+  }
+}
+
+.contacts-map {
+  box-shadow: 0 0 4px;
+}
+
+.map-text {
+  display: flex;
+  height: 2rem;
+
+  h2 {
+    padding: 0.3rem;
+  }
+
+  span {
+    svg {
+      height: 100%;
+      width: 2rem;
+    }
+  }
+
+  margin-bottom: 1rem;
+}
