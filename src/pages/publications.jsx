@@ -15,7 +15,7 @@ const PublicationEntry = ({ data }) => {
   );
 };
 
-const groupByYear = (items) =>
+export const groupByYear = (items) =>
   items.reduce((res, item) => {
     const year = item.childMarkdownRemark.frontmatter.year;
     if (!res[year]) {
