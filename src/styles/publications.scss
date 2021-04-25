@@ -1,12 +1,69 @@
 @import "./variables";
 
 .year-list {
-  border-left: 2px solid $primary;
-  padding-left: 9px;
+  border-left: 3px solid $primary;
+  padding-left: 0;
   margin-bottom: 0;
+  list-style: none;
 }
 
 .year-list-closer {
   height: 4rem;
-  border-left: 2px dashed $primary;
+  border-left: 3px dashed $primary;
+  margin-top: -1.5rem;
+}
+
+.year-entry {
+  margin-left: -8px;
+}
+
+.list-bullet {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: $primary;
+  border: 3px solid white;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.publications-list {
+  list-style: none;
+}
+
+.publication-entry {
+  background-color: #fafafa;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0 4px #808080;
+
+  strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  p {
+    color: #505050;
+  }
+
+  code {
+    display: inline;
+    color: #e69500;
+  }
+
+  a {
+    padding: 0.3rem 0.5rem;
+    border: 1px solid;
+    border-radius: 4px;
+    float: right;
+    position: relative;
+    bottom: 0.3rem;
+  }
+}
+
+.year-title {
+  font-weight: bolder;
+  font-size: large;
+  color: $secondary;
 }

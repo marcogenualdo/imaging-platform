@@ -5,9 +5,10 @@ import "../styles/publications.scss";
 
 const PublicationYear = ({ yearData }) => {
   return (
-    <li>
-      <p>{yearData.year}</p>
-      <ul>
+    <li className="year-entry">
+      <div className="list-bullet" />
+      <span className="year-title">{yearData.year}</span>
+      <ul className="publications-list">
         {yearData.data.map((item, index) => (
           <PublicationEntry data={item} key={index} />
         ))}
@@ -19,9 +20,9 @@ const PublicationYear = ({ yearData }) => {
 const PublicationEntry = ({ data }) => {
   return (
     <li className="publication-entry">
-      <p>{data.authors}</p>
-      <p>{data.title}</p>
-      <p>{data.notes}</p>
+      <strong>{data.title}</strong>
+      <p>{data.authors.replace(/,/g, "  ꞏ  ")}</p>
+      <code>{data.notes}</code>
       <a href={data.url}>Full article</a>
     </li>
   );
