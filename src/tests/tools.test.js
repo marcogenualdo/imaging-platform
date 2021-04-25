@@ -1,4 +1,4 @@
-import { groupByYear } from "../pages/publications";
+import { groupByYear } from "../tools";
 
 describe("groupByYear", () => {
   test("empty", () => {

@@ -1,7 +1,9 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
+import SectionHeader from "../components/section-header";
 import "../styles/publications.scss";
+import { groupByYear } from "../tools";
 
 const PublicationYear = ({ yearData }) => {
   return (
@@ -28,34 +30,12 @@ const PublicationEntry = ({ data }) => {
   );
 };
 
-export const groupByYear = (items) => {
-  // group into year
-  const dict = items.reduce((res, item) => {
-    const year = item.childMarkdownRemark.frontmatter.year;
-    if (!res[year]) {
-      res[year] = [];
-    }
-    res[year].push(item.childMarkdownRemark.frontmatter);
-    return res;
-  }, {});
-
-  // transform into list
-  const keys = Object.keys(dict)
-    .sort((a, b) => Number(b.year) - Number(a.year))
-    .reverse();
-  console.log(keys);
-  const list = keys.map((key) => {
-    return { year: key, data: dict[key] };
-  });
-  console.log(JSON.stringify(list, null, 2));
-  return list;
-};
-
 const PublicationsPage = ({ data }) => {
   const groupedByYear = groupByYear(data.publications.nodes);
 
   return (
     <Layout pageName="publications">
+      <SectionHeader title="Publications" />
       <ul className="year-list">
         {groupedByYear.map((item) => (
           <PublicationYear yearData={item} key={item.year} />

@@ -67,3 +67,21 @@
   font-size: large;
   color: $secondary;
 }
+
+// phone
+@media screen and (max-width: $phone-width) {
+  .publications-list {
+    padding-left: 1rem;
+  }
+
+  .publication-entry {
+    code {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      float: none;
+    }
+  }
+}
