@@ -5,7 +5,8 @@ $card-radius: 0.5rem;
 .partner-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .partner-entry {
@@ -15,9 +16,10 @@ $card-radius: 0.5rem;
   height: 100%;
   margin: 1rem;
   border-radius: $card-radius;
-  box-shadow: 0 0 6px $secondary;
+  box-shadow: 6px -6px 6px #f4f4f4;
 
   img {
+    max-height: 6rem;
     background-color: white;
     border-radius: $card-radius $card-radius 0 0;
   }

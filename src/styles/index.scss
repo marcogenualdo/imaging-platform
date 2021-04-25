@@ -73,14 +73,13 @@
 .news-preview-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .news-preview-entry {
   margin: 1rem;
-  box-shadow: 0.1rem 0.1rem 0.75rem #808080;
+  box-shadow: 0.1rem 0.1rem 6px $secondary;
   border-radius: $card-radius;
-  flex: 0.3 0 16rem;
+  flex: 0.2 0 18rem;
 
   .news-preview-image {
     border-radius: $card-radius $card-radius 0 0;
