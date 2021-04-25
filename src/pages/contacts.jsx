@@ -31,7 +31,7 @@ const ContactsPage = ({ data }) => {
             title="gmaps-iframe"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.492672993442!2d12.512249715633757!3d41.90376657178628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258f5b0fe7d911%3A0xed5342b156dcfd2b!2sSapienza%20University%20of%20Rome!5e0!3m2!1sen!2sit!4v1619282094810!5m2!1sen!2sit"
             className="contacts-map"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
           ></iframe>
         </Col>

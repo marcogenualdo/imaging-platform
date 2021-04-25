@@ -21,10 +21,6 @@ const MicroscopeIcon = () => (
 );
 
 const Sidebar = ({ pageName, open }) => {
-  const handleClick = (e) => {
-    console.log("click ", e);
-  };
-
   return (
     <Sider
       theme="light"
@@ -33,7 +29,6 @@ const Sidebar = ({ pageName, open }) => {
       id="sider"
     >
       <Menu
-        onClick={handleClick}
         defaultSelectedKeys={[pageName]}
         defaultOpenKeys={["equipment-sub"]}
         mode="inline"
