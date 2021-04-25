@@ -5,14 +5,14 @@ import React from "react";
 import Layout from "../components/layout";
 import SectionHeader from "../components/section-header";
 import SEO from "../components/seo";
-import DnaBg from "../images/bg.svg";
+import HomeBg from "../images/home-bg.svg";
 import "../styles/index.scss";
 import "../styles/style.scss";
 
 const IndexPage = ({ data }) => (
   <>
     <Layout pageName="home">
-      <DnaBg className="dna-bg" />
+      <HomeBg className="home-bg" />
       <div className="content">
         <section className="intro">
           <SectionHeader title="Leading Research" />
