@@ -1,0 +1,17 @@
+@import "./variables";
+
+.equipment-intro {
+  text-align: justify;
+
+  ul {
+    list-style: circle;
+
+    li {
+      padding: 0.3rem 0;
+    }
+
+    li::marker {
+      color: $primary;
+    }
+  }
+}
