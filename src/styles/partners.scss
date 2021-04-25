@@ -1,0 +1,39 @@
+@import "./variables";
+
+$card-radius: 0.5rem;
+
+.partner-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.partner-entry {
+  flex: 0 0 16rem;
+  background-color: #f4f4f4;
+  background-image: linear-gradient(to right, #f4f4f4, white);
+  height: 100%;
+  margin: 1rem;
+  border-radius: $card-radius;
+  box-shadow: 0 0 6px $secondary;
+
+  img {
+    background-color: white;
+    border-radius: $card-radius $card-radius 0 0;
+  }
+
+  strong {
+    font-size: 1rem;
+    color: black;
+    display: block;
+    padding: 0.6rem;
+  }
+
+  transition: transform 0.5s;
+
+  &:hover {
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
+  }
+}

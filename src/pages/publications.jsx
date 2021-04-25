@@ -25,7 +25,9 @@ const PublicationEntry = ({ data }) => {
       <strong>{data.title}</strong>
       <p>{data.authors.replace(/,/g, "  ꞏ  ")}</p>
       <code>{data.notes}</code>
-      <a href={data.url}>Full article</a>
+      <a href={data.url} target="blank">
+        Full article
+      </a>
     </li>
   );
 };

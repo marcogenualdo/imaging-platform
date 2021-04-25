@@ -31,8 +31,8 @@ const TutorialEntry = ({ data }) => {
 const TutorialsPage = ({ data }) => {
   return (
     <Layout pageName="tutorials">
-      {data.tutorials.nodes.map((item) => (
-        <TutorialEntry data={item} />
+      {data.tutorials.nodes.map((item, index) => (
+        <TutorialEntry data={item} key={index} />
       ))}
     </Layout>
   );
