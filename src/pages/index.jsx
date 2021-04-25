@@ -78,6 +78,7 @@ export const query = graphql`
         order: DESC
       }
       filter: { absolutePath: { regex: "/news//" } }
+      limit: 4
     ) {
       nodes {
         childMarkdownRemark {
