@@ -1,0 +1,12 @@
+@import "./variables";
+
+.year-list {
+  border-left: 2px solid $primary;
+  padding-left: 9px;
+  margin-bottom: 0;
+}
+
+.year-list-closer {
+  height: 4rem;
+  border-left: 2px dashed $primary;
+}

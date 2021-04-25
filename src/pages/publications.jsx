@@ -1,37 +1,66 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
+import "../styles/publications.scss";
 
-const PublicationEntry = ({ data }) => {
-  const markdown = data.childMarkdownRemark;
-
+const PublicationYear = ({ yearData }) => {
   return (
-    <div className="publication-entry">
-      <p>{markdown.frontmatter.authors}</p>
-      <p>{markdown.frontmatter.title}</p>
-      <p>{markdown.frontmatter.notes}</p>
-      <a href={markdown.frontmatter.url}>Full article</a>
-    </div>
+    <li>
+      <p>{yearData.year}</p>
+      <ul>
+        {yearData.data.map((item, index) => (
+          <PublicationEntry data={item} key={index} />
+        ))}
+      </ul>
+    </li>
   );
 };
 
-export const groupByYear = (items) =>
-  items.reduce((res, item) => {
+const PublicationEntry = ({ data }) => {
+  return (
+    <li className="publication-entry">
+      <p>{data.authors}</p>
+      <p>{data.title}</p>
+      <p>{data.notes}</p>
+      <a href={data.url}>Full article</a>
+    </li>
+  );
+};
+
+export const groupByYear = (items) => {
+  // group into year
+  const dict = items.reduce((res, item) => {
     const year = item.childMarkdownRemark.frontmatter.year;
     if (!res[year]) {
       res[year] = [];
     }
-    res[year].push(item);
+    res[year].push(item.childMarkdownRemark.frontmatter);
     return res;
   }, {});
 
+  // transform into list
+  const keys = Object.keys(dict)
+    .sort((a, b) => Number(b.year) - Number(a.year))
+    .reverse();
+  console.log(keys);
+  const list = keys.map((key) => {
+    return { year: key, data: dict[key] };
+  });
+  console.log(JSON.stringify(list, null, 2));
+  return list;
+};
+
 const PublicationsPage = ({ data }) => {
   const groupedByYear = groupByYear(data.publications.nodes);
+
   return (
     <Layout pageName="publications">
-      {data.publications.nodes.map((item) => (
-        <PublicationEntry data={item} />
-      ))}
+      <ul className="year-list">
+        {groupedByYear.map((item) => (
+          <PublicationYear yearData={item} key={item.year} />
+        ))}
+      </ul>
+      <div className="year-list-closer" />
     </Layout>
   );
 };
