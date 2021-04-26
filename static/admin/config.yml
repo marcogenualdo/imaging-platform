@@ -73,3 +73,19 @@ collections:
         file: 'content/contacts.md'
         fields:
           - { label: 'Text (format contacts as a list, emails as BOLD)', name: 'body', widget: 'markdown' }
+
+  - name: 'members'
+    label: 'Members'
+    create: false
+    files:
+      - name: 'members'
+        label: 'Members'
+        file: 'content/members.json'
+        fields:
+          - name: 'members'
+            label: 'Members'
+            widget: 'list'
+            fields:
+            - { label: 'Name', name: 'name', widget: 'string' }
+            - { label: 'Mail', name: 'mail', widget: 'string' }
+            - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }

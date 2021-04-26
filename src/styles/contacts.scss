@@ -54,3 +54,34 @@
 
   margin-bottom: 1rem;
 }
+
+.members-list {
+  padding: 0;
+  list-style: none;
+}
+
+.member-item {
+  height: 7rem;
+  border-bottom: 1px solid $primary;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  strong {
+    display: block;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  .member-avatar {
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+}

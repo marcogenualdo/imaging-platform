@@ -6,9 +6,11 @@ import "../styles/contacts.scss";
 import "../styles/style.scss";
 import SectionHeader from "../components/section-header";
 import { EnvironmentTwoTone } from "@ant-design/icons";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const ContactsPage = ({ data }) => {
   const content = data.contacts.childMarkdownRemark;
+  const members = data.members.childContactsJson.members;
 
   return (
     <Layout pageName="contacts">
@@ -36,6 +38,22 @@ const ContactsPage = ({ data }) => {
           ></iframe>
         </Col>
       </Row>
+      <SectionHeader title="Members" />
+      <ul className="members-list">
+        {members.map((member) => (
+          <li className="member-item">
+            <div>
+              <strong>{member.name}</strong>
+              <a>{member.mail}</a>
+            </div>
+            <GatsbyImage
+              className="member-avatar"
+              image={getImage(member.featuredImage)}
+              alt=""
+            />
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 };
@@ -45,6 +63,19 @@ export const query = graphql`
     contacts: file(relativePath: { eq: "contacts/contacts.md" }) {
       childMarkdownRemark {
         html
+      }
+    }
+    members: file(relativePath: { eq: "contacts/members.json" }) {
+      childContactsJson {
+        members {
+          mail
+          name
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 920)
+            }
+          }
+        }
       }
     }
   }
