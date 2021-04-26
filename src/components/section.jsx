@@ -10,4 +10,11 @@ const SectionHeader = ({ title }) => {
   );
 };
 
-export default SectionHeader;
+const Section = ({ title, children, className, id }) => (
+  <section className={className} id={id}>
+    <SectionHeader title={title} />
+    {children}
+  </section>
+);
+
+export default Section;

@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
-import SectionHeader from "../components/section-header";
+import Section from "../components/section";
 import "../styles/publications.scss";
 import { groupByYear } from "../tools";
 
@@ -37,13 +37,14 @@ const PublicationsPage = ({ data }) => {
 
   return (
     <Layout pageName="publications">
-      <SectionHeader title="Publications" />
-      <ul className="year-list">
-        {groupedByYear.map((item) => (
-          <PublicationYear yearData={item} key={item.year} />
-        ))}
-      </ul>
-      <div className="year-list-closer" />
+      <Section title="Publications">
+        <ul className="year-list">
+          {groupedByYear.map((item) => (
+            <PublicationYear yearData={item} key={item.year} />
+          ))}
+        </ul>
+        <div className="year-list-closer" />
+      </Section>
     </Layout>
   );
 };

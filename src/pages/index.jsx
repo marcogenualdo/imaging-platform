@@ -3,7 +3,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
-import SectionHeader from "../components/section-header";
+import Section from "../components/section";
 import SEO from "../components/seo";
 import HomeBg from "../images/home-bg.svg";
 import "../styles/index.scss";
@@ -14,23 +14,21 @@ const IndexPage = ({ data }) => (
     <Layout pageName="home">
       <HomeBg className="home-bg" />
       <div className="content">
-        <section className="intro">
-          <SectionHeader title="Leading Research" />
+        <Section className="intro" title="Leading Research">
           <div
             className="intro-text"
             dangerouslySetInnerHTML={{
               __html: data.intro.childMarkdownRemark.html,
             }}
           />
-        </section>
-        <section id="news">
-          <SectionHeader title="Latest News" />
+        </Section>
+        <Section id="news" title="Latest News">
           <div className="news-preview-container">
             {data.news.nodes.map((item, index) => (
               <NewsPreview data={item.childMarkdownRemark} key={index} />
             ))}
           </div>
-        </section>
+        </Section>
       </div>
       <SEO title="Home" />
     </Layout>

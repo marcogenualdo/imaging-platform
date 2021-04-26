@@ -2,18 +2,16 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
-import SectionHeader from "../components/section-header";
+import Section from "../components/section";
 import "../styles/news.scss";
 import "../styles/style.scss";
 
 const NewsPage = ({ data }) => {
   return (
     <Layout pageName="news">
-      <div className="news-container">
-        {data.news.nodes.map((item, index) => (
-          <NewsEntry data={item} key={index} id={index} />
-        ))}
-      </div>
+      {data.news.nodes.map((item, index) => (
+        <NewsEntry data={item} key={index} id={index} />
+      ))}
     </Layout>
   );
 };
@@ -21,9 +19,13 @@ const NewsPage = ({ data }) => {
 const NewsEntry = ({ data, id }) => {
   const isEven = id % 2;
   const content = data.childMarkdownRemark;
+
   return (
-    <div className="news-entry" id={content.frontmatter.title}>
-      <SectionHeader title={content.frontmatter.title} />
+    <Section
+      title={content.frontmatter.title}
+      id={content.frontmatter.title}
+      className="news-entry"
+    >
       <div
         className="news-image"
         style={{
@@ -47,7 +49,7 @@ const NewsEntry = ({ data, id }) => {
         />
       </div>
       <div style={{ clear: "both" }} />
-    </div>
+    </Section>
   );
 };
 

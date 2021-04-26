@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
-import SectionHeader from "../components/section-header";
+import Section from "../components/section";
 import "../styles/equipment.scss";
 import "../styles/style.scss";
 
@@ -10,13 +10,14 @@ const EquipmentPage = ({ data }) => {
 
   return (
     <Layout pageName="equipment">
-      <SectionHeader title="Equipment" />
-      <span
-        className="equipment-intro"
-        dangerouslySetInnerHTML={{
-          __html: content.html,
-        }}
-      />
+      <Section title="Equipment">
+        <span
+          className="equipment-intro"
+          dangerouslySetInnerHTML={{
+            __html: content.html,
+          }}
+        />
+      </Section>
     </Layout>
   );
 };

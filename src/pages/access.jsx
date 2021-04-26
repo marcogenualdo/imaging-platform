@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
-import SectionHeader from "../components/section-header";
+import Section from "../components/section";
 import "../styles/guidelines.scss";
 import "../styles/style.scss";
 
@@ -10,13 +10,14 @@ const AccessPage = ({ data }) => {
 
   return (
     <Layout pageName="access">
-      <SectionHeader title="Access" />
-      <span
-        className="guidelines-doc"
-        dangerouslySetInnerHTML={{
-          __html: content.html,
-        }}
-      />
+      <Section title="Access">
+        <span
+          className="guidelines-doc"
+          dangerouslySetInnerHTML={{
+            __html: content.html,
+          }}
+        />
+      </Section>
     </Layout>
   );
 };

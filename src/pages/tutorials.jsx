@@ -2,19 +2,18 @@ import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import "../styles/tutorials.scss";
-import SectionHeader from "../components/section-header";
+import Section from "../components/section";
 
 const TutorialEntry = ({ data }) => {
   const markdown = data.childMarkdownRemark;
 
   return (
-    <div className="tutorial-entry">
-      <SectionHeader title={markdown.frontmatter.title} />
+    <Section title={markdown.frontmatter.title}>
       <iframe
         className="tutorial-entry-video"
         src={markdown.frontmatter.videoLink}
         title={markdown.frontmatter.title}
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
         allowFullScreen={true}
       ></iframe>
@@ -24,7 +23,7 @@ const TutorialEntry = ({ data }) => {
           __html: markdown.html,
         }}
       />
-    </div>
+    </Section>
   );
 };
 
