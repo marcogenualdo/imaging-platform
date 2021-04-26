@@ -71,6 +71,10 @@
     display: block;
   }
 
+  p {
+    color: $primary;
+  }
+
   div {
     display: flex;
     justify-content: center;

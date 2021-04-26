@@ -45,7 +45,7 @@ const ContactsPage = ({ data }) => {
             <li className="member-item" key={index}>
               <div>
                 <strong>{member.name}</strong>
-                <a>{member.mail}</a>
+                <p>{member.mail}</p>
               </div>
               <GatsbyImage
                 className="member-avatar"
