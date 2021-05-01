@@ -1,6 +1,6 @@
 ---
 title: Workshop – Artificial intelligence and automation meet cellular imaging in biomedical research
-featuredImage: ../uploads/news3.jpg
+featuredImage: ../../uploads/news3.jpg
 date: 2020-04-31
 ---
 

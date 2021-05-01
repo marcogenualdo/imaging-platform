@@ -26,14 +26,11 @@ const NewsPage = ({ data }) => {
 
 const NewsEntry = ({ data }) => {
   const content = data.childMarkdownRemark;
-  console.log(content);
 
   return (
-    <Section
-      title={content.frontmatter.title}
-      id={content.frontmatter.title}
-      className="news-entry"
-    >
+    //id={content.frontmatter.title}
+    <div className="news-entry">
+      <h3>{content.frontmatter.title}</h3>
       <div
         className="news-image"
         style={{
@@ -56,7 +53,7 @@ const NewsEntry = ({ data }) => {
         />
       </div>
       <div style={{ clear: "both" }} />
-    </Section>
+    </div>
   );
 };
 
@@ -64,7 +61,7 @@ export const query = graphql`
   query {
     news: allFile(
       sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
-      filter: { absolutePath: { regex: "/news//" } }
+      filter: { absolutePath: { regex: "/news/news//" } }
     ) {
       nodes {
         childMarkdownRemark {

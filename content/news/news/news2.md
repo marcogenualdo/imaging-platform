@@ -1,6 +1,6 @@
 ---
 title: Incontri al DSB – EuroBioImaging Italia and its nodes
-featuredImage: ../uploads/news2.jpg
+featuredImage: ../../uploads/news2.jpg
 date: 2020-04-31
 ---
 

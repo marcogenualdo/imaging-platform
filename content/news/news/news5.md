@@ -1,6 +1,6 @@
 ---
 title: "IBPM imaging platform is an operating unit of the IMPARA project: Imaging from molecules to preclinic"
-featuredImage: ../uploads/news5.jpg
+featuredImage: ../../uploads/news5.jpg
 date: 2020-04-31
 ---
 
