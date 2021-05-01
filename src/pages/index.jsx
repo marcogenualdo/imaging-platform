@@ -9,31 +9,54 @@ import HomeBg from "../images/home-bg.svg";
 import "../styles/index.scss";
 import "../styles/style.scss";
 
-const IndexPage = ({ data }) => (
-  <>
-    <Layout pageName="home">
-      <HomeBg className="home-bg" />
-      <div className="content">
-        <Section className="intro" title="Leading Research">
-          <div
-            className="intro-text"
-            dangerouslySetInnerHTML={{
-              __html: data.intro.childMarkdownRemark.html,
-            }}
-          />
-        </Section>
-        <Section id="news" title="Latest News">
-          <div className="news-preview-container">
-            {data.news.nodes.map((item, index) => (
-              <NewsPreview data={item.childMarkdownRemark} key={index} />
-            ))}
-          </div>
-        </Section>
-      </div>
-      <SEO title="Home" />
-    </Layout>
-  </>
-);
+const IndexPage = ({ data }) => {
+  const members = data.members.childContactsJson.members;
+
+  return (
+    <>
+      <Layout pageName="home">
+        <HomeBg className="home-bg" />
+        <div className="content">
+          <Section className="intro" title="Leading Research">
+            <div
+              className="intro-text"
+              dangerouslySetInnerHTML={{
+                __html: data.intro.childMarkdownRemark.html,
+              }}
+            />
+          </Section>
+
+          <Section id="news" title="Latest News">
+            <div className="news-preview-container">
+              {data.news.nodes.map((item, index) => (
+                <NewsPreview data={item.childMarkdownRemark} key={index} />
+              ))}
+            </div>
+          </Section>
+
+          <Section title="Members">
+            <ul className="members-list">
+              {members.map((member, index) => (
+                <li className="member-item" key={index}>
+                  <div>
+                    <strong>{member.name}</strong>
+                    <p>{member.mail}</p>
+                  </div>
+                  <GatsbyImage
+                    className="member-avatar"
+                    image={getImage(member.featuredImage)}
+                    alt=""
+                  />
+                </li>
+              ))}
+            </ul>
+          </Section>
+        </div>
+        <SEO title="Home" />
+      </Layout>
+    </>
+  );
+};
 
 const NewsPreview = ({ data }) => {
   return (
@@ -76,7 +99,7 @@ export const query = graphql`
         order: DESC
       }
       filter: { absolutePath: { regex: "/news//" } }
-      limit: 4
+      limit: 2
     ) {
       nodes {
         childMarkdownRemark {
@@ -89,6 +112,19 @@ export const query = graphql`
             title
           }
           html
+        }
+      }
+    }
+    members: file(relativePath: { eq: "contacts/members.json" }) {
+      childContactsJson {
+        members {
+          mail
+          name
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 920)
+            }
+          }
         }
       }
     }

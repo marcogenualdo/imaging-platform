@@ -73,6 +73,7 @@
 .news-preview-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .news-preview-entry {

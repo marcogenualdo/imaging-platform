@@ -9,16 +9,24 @@ import "../styles/style.scss";
 const NewsPage = ({ data }) => {
   return (
     <Layout pageName="news">
-      {data.news.nodes.map((item, index) => (
-        <NewsEntry data={item} key={index} id={index} />
-      ))}
+      <Section title="News at the platform">
+        {data.news.nodes.map((item, index) => (
+          <NewsEntry data={item} key={index} id={index} />
+        ))}
+      </Section>
+
+      <Section title="Events">
+        {data.events.nodes.map((item, index) => (
+          <NewsEntry data={item} key={index} id={index} />
+        ))}
+      </Section>
     </Layout>
   );
 };
 
-const NewsEntry = ({ data, id }) => {
-  const isEven = id % 2;
+const NewsEntry = ({ data }) => {
   const content = data.childMarkdownRemark;
+  console.log(content);
 
   return (
     <Section
@@ -29,9 +37,8 @@ const NewsEntry = ({ data, id }) => {
       <div
         className="news-image"
         style={{
-          float: isEven ? "right" : "left",
-          marginLeft: !isEven ? 0 : "2rem",
-          marginRight: isEven ? 0 : "2rem",
+          float: "left",
+          marginRight: "2rem",
         }}
       >
         <GatsbyImage
@@ -40,7 +47,7 @@ const NewsEntry = ({ data, id }) => {
         />
       </div>
       <div className="news-content">
-        <p style={{ color: "#808080" }}>{data.birthTime}</p>
+        <p style={{ color: "#808080" }}>{content.frontmatter.date}</p>
         <span
           className="news-text"
           dangerouslySetInnerHTML={{
@@ -56,14 +63,10 @@ const NewsEntry = ({ data, id }) => {
 export const query = graphql`
   query {
     news: allFile(
-      sort: {
-        fields: childrenMarkdownRemark___frontmatter___order
-        order: DESC
-      }
+      sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
       filter: { absolutePath: { regex: "/news//" } }
     ) {
       nodes {
-        birthTime(formatString: "DD/MM/YYYY", locale: "it")
         childMarkdownRemark {
           frontmatter {
             featuredImage {
@@ -72,7 +75,26 @@ export const query = graphql`
               }
             }
             title
-            order
+            date
+          }
+          html
+        }
+      }
+    }
+    events: allFile(
+      sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
+      filter: { absolutePath: { regex: "/news/events//" } }
+    ) {
+      nodes {
+        childMarkdownRemark {
+          frontmatter {
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(width: 920)
+              }
+            }
+            title
+            date
           }
           html
         }
