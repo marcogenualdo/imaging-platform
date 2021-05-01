@@ -47,7 +47,7 @@
 
   #site-trunk {
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 0 1rem;
   }
 
   .sider-closed {
@@ -63,6 +63,6 @@
 // phone
 @media screen and (max-width: $phone-width) {
   #site-trunk {
-    padding: 2rem 0.5rem;
+    padding: 0 0.5rem;
   }
 }
