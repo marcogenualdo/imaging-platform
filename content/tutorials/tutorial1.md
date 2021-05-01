@@ -1,5 +1,5 @@
 ---
-title: Automated image acquisition TUTORIAL
+title: Automated image acquisition
 videoLink: https://www.youtube.com/embed/KOs14cRR7VM
 ---
 

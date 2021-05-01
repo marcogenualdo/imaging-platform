@@ -28,7 +28,7 @@ const PartnersPage = ({ data }) => {
 
   return (
     <Layout pageName="partners">
-      <Section title="Indusrty Partners">
+      <Section title="Industry Partners">
         <div className="partner-list">
           {industryPartners.map((item, index) => (
             <PartnerEntry

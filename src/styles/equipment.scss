@@ -15,3 +15,55 @@
     }
   }
 }
+
+.equipment-item {
+  margin: 3rem 0;
+
+  .equipment-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .equipment-image-box {
+    float: right;
+    max-width: 60%;
+    position: relative;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+
+    img {
+      border-radius: 0.5rem;
+    }
+  }
+
+  .equipment-text {
+    text-align: justify;
+
+    ul {
+      padding-left: 1rem;
+      list-style: none;
+
+      li {
+        margin: 0.5rem 0;
+      }
+
+      li::before {
+        content: "✓";
+        color: $primary;
+        font-size: 1.2rem;
+        display: inline-block;
+        width: 1.2rem;
+        margin-left: -1.2rem;
+      }
+    }
+  }
+}
+
+// phone
+@media screen and (max-width: $phone-width) {
+  .equipment-item .equipment-image-box {
+    float: unset;
+    max-width: unset;
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -23,7 +23,7 @@ const PublicationEntry = ({ data }) => {
   return (
     <li className="publication-entry">
       <strong>{data.title}</strong>
-      <p>{data.authors.replace(/,/g, "  ꞏ  ")}</p>
+      <p>{data.authors}</p>
       <code>{data.notes}</code>
       <a href={data.url} target="blank">
         Full article
