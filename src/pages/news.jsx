@@ -27,15 +27,16 @@ const NewsPage = ({ data }) => {
 const NewsEntry = ({ data }) => {
   const content = data.childMarkdownRemark;
 
+  const date = content.frontmatter.date;
+  const dispDate = date.substr(0, date.indexOf("T"));
+
   return (
-    //id={content.frontmatter.title}
-    <div className="news-entry">
+    <div className="news-entry" id={content.frontmatter.title}>
       <h3>{content.frontmatter.title}</h3>
       <div
         className="news-image"
         style={{
-          float: "left",
-          marginRight: "2rem",
+          width: content.html ? "50%" : "100%",
         }}
       >
         <GatsbyImage
@@ -44,7 +45,7 @@ const NewsEntry = ({ data }) => {
         />
       </div>
       <div className="news-content">
-        <p style={{ color: "#808080" }}>{content.frontmatter.date}</p>
+        <p style={{ color: "#808080" }}>{dispDate}</p>
         <span
           className="news-text"
           dangerouslySetInnerHTML={{

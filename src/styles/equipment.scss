@@ -16,12 +16,15 @@
   }
 }
 
-.equipment-item {
+@mixin post {
   margin: 3rem 0;
   padding: 1rem;
-  background-color: #f6f6f6;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 3px #808080;
+  background-image: linear-gradient(45deg, #fff, #f6f6f6);
+  box-shadow: 0 0 4px #ccc;
+}
+
+.equipment-item {
+  @include post;
 
   .equipment-title {
     margin-bottom: 1.5rem;

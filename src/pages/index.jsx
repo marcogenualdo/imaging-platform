@@ -98,7 +98,7 @@ export const query = graphql`
         fields: childrenMarkdownRemark___frontmatter___order
         order: DESC
       }
-      filter: { absolutePath: { regex: "/news//" } }
+      filter: { absolutePath: { regex: "/news/news//" } }
       limit: 2
     ) {
       nodes {
