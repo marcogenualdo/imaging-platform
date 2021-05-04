@@ -52,18 +52,16 @@ const PublicationsPage = ({ data }) => {
 export const query = graphql`
   query {
     publications: allFile(
-      sort: { fields: childrenMarkdownRemark___frontmatter___year, order: DESC }
+      sort: { fields: childrenPublicationsJson___year, order: DESC }
       filter: { absolutePath: { regex: "/publications//" } }
     ) {
       nodes {
-        childMarkdownRemark {
-          frontmatter {
-            authors
-            year
-            title
-            notes
-            url
-          }
+        childPublicationsJson {
+          authors
+          notes
+          title
+          url
+          year
         }
       }
     }

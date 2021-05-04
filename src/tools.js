@@ -4,11 +4,12 @@
 export const groupByYear = (items) => {
   // group into year
   const dict = items.reduce((res, item) => {
-    const year = item.childMarkdownRemark.frontmatter.year;
+    const content = item.childPublicationsJson;
+    const year = content.year;
     if (!res[year]) {
       res[year] = [];
     }
-    res[year].push(item.childMarkdownRemark.frontmatter);
+    res[year].push(content);
     return res;
   }, {});
 
