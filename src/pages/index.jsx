@@ -10,7 +10,7 @@ import "../styles/index.scss";
 import "../styles/style.scss";
 
 const IndexPage = ({ data }) => {
-  const members = data.members.childContactsJson.members;
+  const members = data.members.childHomeJson.members;
 
   return (
     <>
@@ -115,8 +115,8 @@ export const query = graphql`
         }
       }
     }
-    members: file(relativePath: { eq: "contacts/members.json" }) {
-      childContactsJson {
+    members: file(relativePath: { eq: "home/members.json" }) {
+      childHomeJson {
         members {
           mail
           name

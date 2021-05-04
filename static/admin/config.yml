@@ -43,16 +43,28 @@ collections:
         label: 'Guidelines'
         file: 'content/guidelines/guidelines.md'
         fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Text', name: 'body', widget: 'markdown' }
 
 
   - name: 'news'
     label: 'News'
-    folder: 'content/news'
+    folder: 'content/news/news'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
+      - { label: 'Date', name: 'date', widget: 'date', format: 'YYYY-MM-DD', default: '' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'events'
+    label: 'Events'
+    folder: 'content/news/events'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
+      - { label: 'Date', name: 'date', widget: 'date', format: 'YYYY-MM-DD', default: '' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'tutorials'
@@ -70,7 +82,7 @@ collections:
     files:
       - name: 'contacts'
         label: 'Contacts'
-        file: 'content/contacts.md'
+        file: 'content/contacts/contacts.md'
         fields:
           - { label: 'Text (format contacts as a list, emails as BOLD)', name: 'body', widget: 'markdown' }
 
@@ -80,7 +92,7 @@ collections:
     files:
       - name: 'members'
         label: 'Members'
-        file: 'content/members.json'
+        file: 'content/home/members.json'
         fields:
           - name: 'members'
             label: 'Members'
@@ -89,3 +101,14 @@ collections:
             - { label: 'Name', name: 'name', widget: 'string' }
             - { label: 'Mail', name: 'mail', widget: 'string' }
             - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
+
+  - name: 'publications'
+    label: 'Publications'
+    create: true
+    folder: 'content/publications'
+    fields:
+      - { label: 'Year', name: 'year', widget: 'string' }
+      - { label: 'Authors', name: 'authors', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Notes', name: 'notes', widget: 'string' }
+      - { label: 'URL', name: 'url', widget: 'string' }
