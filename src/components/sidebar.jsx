@@ -15,7 +15,7 @@ import "../styles/sidebar.scss";
 import "../styles/style.scss";
 
 const SvgIcon = ({ children }) => (
-  <span className="anticon" style={{ width: "1rem", height: "1rem" }}>
+  <span className="anticon" style={{ width: "0.9rem", height: "0.9rem" }}>
     {children}
   </span>
 );
