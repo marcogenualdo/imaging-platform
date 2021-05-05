@@ -144,6 +144,15 @@
   }
 }
 
+.sp-box {
+  display: flex;
+  justify-content: space-between;
+
+  .sp-item {
+    flex: 0.1 0.1 16rem;
+  }
+}
+
 // tablet
 @media screen and (max-width: $tablet-width) {
   #home-header {

@@ -10,8 +10,9 @@ import "../styles/index.scss";
 import "../styles/style.scss";
 
 const IndexPage = ({ data }) => {
-  const members = data.members.childHomeJson.members;
   const introTitle = data.intro.childMarkdownRemark.frontmatter.title;
+  const members = data.members.childHomeJson.members;
+  const sponsorLogos = data.sponsors.nodes;
 
   return (
     <>
@@ -31,6 +32,16 @@ const IndexPage = ({ data }) => {
             <div className="news-preview-container">
               {data.news.nodes.map((item, index) => (
                 <NewsPreview data={item.childMarkdownRemark} key={index} />
+              ))}
+            </div>
+          </Section>
+
+          <Section title="Sponsors">
+            <div className="sp-box">
+              {sponsorLogos.map((item, index) => (
+                <div key={index} className="sp-item">
+                  <GatsbyImage image={getImage(item)} alt="" />
+                </div>
               ))}
             </div>
           </Section>
@@ -129,6 +140,13 @@ export const query = graphql`
               gatsbyImageData(width: 920)
             }
           }
+        }
+      }
+    }
+    sponsors: allFile(filter: { absolutePath: { regex: "/home/sponsors//" } }) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData(width: 420)
         }
       }
     }
