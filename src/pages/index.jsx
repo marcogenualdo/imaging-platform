@@ -11,13 +11,14 @@ import "../styles/style.scss";
 
 const IndexPage = ({ data }) => {
   const members = data.members.childHomeJson.members;
+  const introTitle = data.intro.childMarkdownRemark.frontmatter.title;
 
   return (
     <>
       <Layout pageName="home">
         <HomeBg className="home-bg" />
         <div className="content">
-          <Section className="intro" title="Leading Research">
+          <Section className="intro" title={introTitle}>
             <div
               className="intro-text"
               dangerouslySetInnerHTML={{
@@ -90,6 +91,9 @@ export const query = graphql`
   query {
     intro: file(relativePath: { eq: "home/intro.md" }) {
       childMarkdownRemark {
+        frontmatter {
+          title
+        }
         html
       }
     }

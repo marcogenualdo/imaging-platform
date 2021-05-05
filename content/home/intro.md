@@ -1,16 +1,20 @@
-Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. <strong> Duis aute irure dolor in reprehenderit in voluptate velit </strong>
-esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum.
+---
+title: Visualizing cell dynamics
+---
 
-Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. <strong> Duis aute irure dolor in reprehenderit in voluptate velit
-</strong>
-esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum.
+The IBPM microscopy platform holds last-generation widefield light microscopy equipment and advanced imaging software for automated image analyses.
+
+It supports versatile applications for both fixed and live cell samples and provides opportunities for coupling dynamic studies (time-lapse recording) with high resolution qualitative and quantitative image analysis.
+
+The Center is open to external users, [click here for access rules](/access).
+
+**Applications**
+
+- Time-lapse recording of cellular processes in live cells over days
+- Detecting intracellular molecular interactions
+- Reconstructing cellular and subcellular structures at 3D level
+- Quantitative analysis of imaging data
+
+**About us**
+
+The platform was first established in 2009 with support from Fondazione Monte Paschi, Fondazione Roma and Assicurazioni Generali S.p.A. The platform is hosted at the Department of Biology and Biotechnology “Charles Darwin” of Sapienza University.
