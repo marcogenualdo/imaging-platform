@@ -1,5 +1,4 @@
 import {
-  BorderlessTableOutlined,
   HomeOutlined,
   PaperClipOutlined,
   PhoneOutlined,
@@ -10,13 +9,14 @@ import "antd/dist/antd.css";
 import Sider from "antd/lib/layout/Sider";
 import { Link } from "gatsby";
 import React from "react";
+import MegaphoneSvg from "../images/loud-speaker.svg";
 import MicroscopeSvg from "../images/microscope-icon.svg";
 import "../styles/sidebar.scss";
 import "../styles/style.scss";
 
-const MicroscopeIcon = () => (
+const SvgIcon = ({ children }) => (
   <span className="anticon" style={{ width: "1rem", height: "1rem" }}>
-    <MicroscopeSvg />
+    {children}
   </span>
 );
 
@@ -39,7 +39,11 @@ const Sidebar = ({ pageName, open }) => {
         </Menu.Item>
         <Menu.SubMenu
           key="equipment-sub"
-          icon={<MicroscopeIcon />}
+          icon={
+            <SvgIcon>
+              <MicroscopeSvg />
+            </SvgIcon>
+          }
           title="Equipment"
         >
           <Menu.ItemGroup subMenuKey="equipment-sub">
@@ -60,7 +64,14 @@ const Sidebar = ({ pageName, open }) => {
         <Menu.Item key="partners" icon={<TeamOutlined />}>
           <Link to="/partners">Partners</Link>
         </Menu.Item>
-        <Menu.Item key="news" icon={<BorderlessTableOutlined />}>
+        <Menu.Item
+          key="news"
+          icon={
+            <SvgIcon>
+              <MegaphoneSvg />
+            </SvgIcon>
+          }
+        >
           <Link to="/news">News</Link>
         </Menu.Item>
         <Menu.Item key="publications" icon={<PaperClipOutlined />}>
