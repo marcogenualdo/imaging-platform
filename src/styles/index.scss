@@ -64,6 +64,8 @@
 
 .intro-text {
   width: 80%;
+
+  @include ulist;
 }
 
 .news-preview-container {

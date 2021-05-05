@@ -54,6 +54,21 @@ footer {
   margin-bottom: 1.5rem;
 }
 
+@mixin ulist {
+  ul {
+    list-style: circle;
+    padding-left: 1rem;
+
+    li {
+      padding: 0.3rem 0;
+    }
+
+    li::marker {
+      color: $primary;
+    }
+  }
+}
+
 // phone
 @media screen and (max-width: $phone-width) {
   ul {
