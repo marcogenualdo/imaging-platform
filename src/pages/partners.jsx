@@ -1,73 +1,50 @@
-import { graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import Section from "../components/section";
 import "../styles/partners.scss";
 
-const PartnerEntry = ({ data }) => {
+const PartnerSection = ({ dirName }) => {
+  const partnerData = useStaticQuery(graphql`
+    {
+      intro: file(relativePath: { eq: "partners/industrial/${dirName}/intro.md" }) {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+  `);
+
   return (
-    <div className="partner-entry">
-      <a href={data.url} target="blank">
-        <GatsbyImage image={getImage(data.featuredImage)} alt="" />
-        <strong>{data.title}</strong>
-      </a>
-    </div>
+    <div
+      className="news-text"
+      dangerouslySetInnerHTML={{
+        __html: partnerData.intro.childMarkdownRemark.html,
+      }}
+    />
   );
 };
 
 const PartnersPage = ({ data }) => {
-  // bucketing into academic/industry
-  const academicPartners = [];
-  const industryPartners = [];
-  for (let item of data.partners.nodes) {
-    if (item.childMarkdownRemark.frontmatter.type === "academic")
-      academicPartners.push(item);
-    else industryPartners.push(item);
-  }
-
   return (
     <Layout pageName="partners">
       <Section title="Industry Partners">
-        <div className="partner-list">
-          {industryPartners.map((item, index) => (
-            <PartnerEntry
-              data={item.childMarkdownRemark.frontmatter}
-              key={index}
-            />
-          ))}
-        </div>
+        {data.industrial.nodes.map((item) => (
+          <PartnerSection dirName={item.base} />
+        ))}
       </Section>
-      <Section title="Academic Partners">
-        <div className="partner-list">
-          {academicPartners.map((item, index) => (
-            <PartnerEntry
-              data={item.childMarkdownRemark.frontmatter}
-              key={index}
-            />
-          ))}
-        </div>
-      </Section>
+      <Section title="Academic Partners"></Section>
     </Layout>
   );
 };
 
 export const query = graphql`
   query {
-    partners: allFile(filter: { absolutePath: { regex: "/partners//" } }) {
+    industrial: allDirectory(
+      filter: { absolutePath: { regex: "/partners/industrial/[^/]*$/" } }
+    ) {
       nodes {
-        childMarkdownRemark {
-          frontmatter {
-            title
-            url
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(width: 420)
-              }
-            }
-            type
-          }
-        }
+        base
       }
     }
   }
