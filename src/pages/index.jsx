@@ -72,29 +72,30 @@ const IndexPage = ({ data }) => {
 
 const NewsPreview = ({ data }) => {
   return (
-    <div className="news-preview-entry">
-      <AnchorLink to={`/news#${data.frontmatter.title}`}>
-        <div className="news-preview-image">
-          <GatsbyImage
-            className="news-preview-image"
-            image={getImage(data.frontmatter.featuredImage)}
-            alt=""
-          />
-        </div>
-        <div className="news-preview-content">
-          <h3>{data.frontmatter.title}</h3>
-          <div className="news-preview-text-divider" />
-          <div
-            className="news-preview-text"
-            dangerouslySetInnerHTML={{
-              __html: data.html,
-            }}
-          />
-          <div className="news-preview-text-fade" />
-          <div className="read-more">Read more {">"}</div>
-        </div>
-      </AnchorLink>
-    </div>
+    <AnchorLink
+      to={`/news#${data.frontmatter.title}`}
+      className="news-preview-entry"
+    >
+      <div className="news-preview-image">
+        <GatsbyImage
+          className="news-preview-image"
+          image={getImage(data.frontmatter.featuredImage)}
+          alt=""
+        />
+      </div>
+      <div className="news-preview-content">
+        <h3>{data.frontmatter.title}</h3>
+        <div className="news-preview-text-divider" />
+        <div
+          className="news-preview-text"
+          dangerouslySetInnerHTML={{
+            __html: data.html,
+          }}
+        />
+        <div className="news-preview-text-fade" />
+        <div className="read-more">Read more {">"}</div>
+      </div>
+    </AnchorLink>
   );
 };
 

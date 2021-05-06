@@ -80,6 +80,10 @@
   border-radius: $card-radius;
   flex: 0.2 0 18rem;
 
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+
   h3 {
     font-size: 1rem;
   }
@@ -103,7 +107,7 @@
     line-height: 0.9rem;
     background-color: #fff;
     border-radius: 0 0 $card-radius $card-radius;
-    top: 0;
+    height: 15rem;
 
     .news-preview-text-divider {
       height: 1px;
@@ -114,8 +118,9 @@
     .news-preview-text {
       font-size: 0.7rem;
       color: $secondary;
-      max-height: 110px;
+      max-height: 7rem;
       overflow: hidden;
+      text-align: justify;
     }
 
     .news-preview-text-fade {
@@ -131,8 +136,9 @@
     .read-more {
       padding-top: 1rem;
       font-size: 0.8rem;
-      text-align: right;
-      position: relative;
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
     }
   }
   transition: transform 0.5s;
