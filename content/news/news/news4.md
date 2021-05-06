@@ -1,7 +1,7 @@
 ---
 title: New publication from the microscopy platform
 featuredImage: ../../uploads/news4.jpg
-date: 2020-12-03
+date: 2021-02-08
 ---
 
 Polverino F, Naso FD, Asteriti IA, Palmerini V, Singh D, Valente D, Bird AW, Rosa A, Mapelli M, Guarguaglini G. The Aurora-A/TPX2 Axis Directs Spindle Orientation in Adherent Human Cells by Regulating NuMA and Microtubule Stability.

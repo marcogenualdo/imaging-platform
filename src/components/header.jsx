@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
 import { Carousel } from "antd";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React, { useEffect, useState } from "react";
+import IbpmLogo from "../images/logo-ibpm.svg";
 import "../styles/header.scss";
 import "../styles/style.scss";
-import IbpmLogo from "../images/logo-ibpm.svg";
 
 const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
   const isHome = pageName === "home";
@@ -47,9 +47,9 @@ const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
         <button className="header-hamburger" onClick={toggleMenu}>
           <MenuOutlined />
         </button>
-        <div className="header-logo">
+        <Link className="header-logo" to="/">
           <IbpmLogo />
-        </div>
+        </Link>
         <h3 className="header-title">Imaging Platform</h3>
         <h3 className="header-slash">/</h3>
         <h3 className="header-subtitle">{pageName}</h3>

@@ -72,7 +72,7 @@ const Sidebar = ({ pageName, open }) => {
             </SvgIcon>
           }
         >
-          <Link to="/news">News</Link>
+          <Link to="/news">News & Events</Link>
         </Menu.Item>
         <Menu.Item key="publications" icon={<PaperClipOutlined />}>
           <Link to="/publications">Publications</Link>

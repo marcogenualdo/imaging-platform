@@ -26,7 +26,7 @@ const PublicationEntry = ({ data }) => {
       <p>{data.authors}</p>
       <code>{data.notes}</code>
       <a href={data.url} target="blank">
-        Full article
+        More
       </a>
     </li>
   );
