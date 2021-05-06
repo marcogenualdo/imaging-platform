@@ -50,15 +50,15 @@ const IndexPage = ({ data }) => {
             <ul className="members-list">
               {members.map((member, index) => (
                 <li className="member-item" key={index}>
-                  <div>
-                    <strong>{member.name}</strong>
-                    <p>{member.mail}</p>
-                  </div>
                   <GatsbyImage
                     className="member-avatar"
                     image={getImage(member.featuredImage)}
                     alt=""
                   />
+                  <div>
+                    <strong>{member.name}</strong>
+                    <p>{member.mail}</p>
+                  </div>
                 </li>
               ))}
             </ul>
