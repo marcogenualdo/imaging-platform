@@ -8,7 +8,7 @@ import "../styles/style.scss";
 
 const NewsPage = ({ data }) => {
   return (
-    <Layout pageName="news & events">
+    <Layout pageName="news">
       <Section title="News at the platform">
         {data.news.nodes.map((item, index) => (
           <NewsEntry data={item} key={index} id={index} />

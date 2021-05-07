@@ -44,12 +44,12 @@ $card-radius: 0.5rem;
   background-color: #fff;
   flex: 0 0 25rem;
   margin: 1rem;
-  box-shadow: 0 0 6px #808080;
+  box-shadow: 0 0 6px $secondary;
   height: 30rem;
 
   .event-image {
     height: 15rem;
-    transition: height 0.5s ease;
+    transition: height 0.2s ease;
   }
 
   .event-content {
@@ -57,7 +57,7 @@ $card-radius: 0.5rem;
     height: 15rem;
     position: relative;
     overflow: hidden;
-    transition: height 0.5s ease;
+    transition: height 0.2s ease;
 
     @include ulist;
   }
@@ -70,6 +70,7 @@ $card-radius: 0.5rem;
     z-index: 1;
     background-image: linear-gradient(to top, #fff, #fff0);
     width: 100%;
+    transition: opacity 0.2s ease;
   }
 
   a {
@@ -87,11 +88,15 @@ $card-radius: 0.5rem;
 
   &:hover {
     .event-image {
-      height: 0rem;
+      height: 0;
     }
 
     .event-content {
       height: 30rem;
+    }
+
+    .text-fade {
+      opacity: 0;
     }
   }
 }
