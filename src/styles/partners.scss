@@ -86,3 +86,40 @@ $card-radius: 0.5rem;
     }
   }
 }
+
+.academic-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 0;
+}
+
+.academic-content {
+  flex: 0 0 30rem;
+
+  h3 {
+    margin-bottom: 1rem;
+    text-decoration: underline 1px $primary;
+  }
+
+  ul {
+    line-height: 3rem;
+    padding-left: 1rem;
+    list-style: circle;
+    li::marker {
+      color: $primary;
+    }
+
+    a {
+      color: black;
+      font-size: 1rem;
+
+      &:hover {
+        text-decoration: underline 1px $primary;
+      }
+    }
+  }
+}
+
+.academic-logo {
+  margin: 1rem 0;
+}

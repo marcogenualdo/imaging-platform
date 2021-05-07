@@ -51,6 +51,34 @@ const PartnerEvent = ({ eventData }) => {
   );
 };
 
+const AcademicPartner = ({ partnerData }) => {
+  return (
+    <div className="academic-box">
+      <div className="academic-content">
+        <h3>{partnerData.frontmatter.title}</h3>
+        <div
+          className="academic-text"
+          dangerouslySetInnerHTML={{
+            __html: partnerData.html,
+          }}
+        />
+      </div>
+      <div className="academic-logos">
+        <GatsbyImage
+          className="academic-logo"
+          image={getImage(partnerData.frontmatter.featuredImage)}
+          alt=""
+        />
+        <img
+          className="academic-logo"
+          src="../../content/uploads/logo-bbcd.png"
+          alt=""
+        />
+      </div>
+    </div>
+  );
+};
+
 const PartnersPage = ({ data }) => {
   const partnerIntros = data.industrial.nodes;
   const partnersData = partnerIntros.reduce((res, cur) => {
@@ -74,7 +102,11 @@ const PartnersPage = ({ data }) => {
           <PartnerSection partnerData={item} key={index} />
         ))}
       </Section>
-      <Section title="Academic Partners"></Section>
+      <Section title="Academic Partners">
+        {data.academic.nodes.map((item) => (
+          <AcademicPartner partnerData={item.childMarkdownRemark} />
+        ))}
+      </Section>
     </Layout>
   );
 };
@@ -110,6 +142,24 @@ export const query = graphql`
               }
             }
             partnerId
+          }
+          html
+        }
+      }
+    }
+    academic: allFile(
+      filter: { absolutePath: { regex: "/partners/academic//" } }
+      sort: { fields: childrenMarkdownRemark___frontmatter___order }
+    ) {
+      nodes {
+        childMarkdownRemark {
+          frontmatter {
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(width: 420)
+              }
+            }
+            title
           }
           html
         }
