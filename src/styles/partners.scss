@@ -2,40 +2,56 @@
 
 $card-radius: 0.5rem;
 
-.partner-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 2rem;
+.partner-box {
+  background-color: #f4f4f4;
+  padding: 0;
+  overflow: hidden;
 }
 
-.partner-entry {
-  flex: 0 0 16rem;
-  background-color: #f4f4f4;
-  background-image: linear-gradient(to right, #f4f4f4, white);
-  height: 100%;
-  margin: 1rem;
-  border-radius: $card-radius;
-  box-shadow: 6px -6px 6px #f4f4f4;
+.partner-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
 
-  img {
-    max-height: 6rem;
-    background-color: white;
-    border-radius: $card-radius $card-radius 0 0;
+.partner-logo {
+  height: 5rem;
+  width: 5rem;
+  display: inline-block;
+  margin: 0 2rem;
+}
+
+.events-box {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.event-card {
+  margin: 3rem;
+  flex: 0 0 20rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border: 2px solid $primary;
+  box-shadow: 0 0 10px #808080;
+
+  .event-image {
+    position: relative;
+    z-index: 0;
+    filter: opacity(23%);
   }
 
-  strong {
-    font-size: 1rem;
-    color: black;
-    display: block;
-    padding: 0.6rem;
-  }
-
-  transition: transform 0.5s;
-
-  &:hover {
-    -ms-transform: scale(1.05); /* IE 9 */
-    -webkit-transform: scale(1.05); /* Safari 3-8 */
-    transform: scale(1.05);
+  .event-text {
+    position: absolute;
+    z-index: 5;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 }
