@@ -11,6 +11,11 @@ $card-radius: 0.5rem;
 
   .partner-header {
     margin: 2rem;
+
+    h1 {
+      margin-bottom: 0.5rem;
+      text-decoration: underline 1px $primary;
+    }
   }
 
   .partner-description {
@@ -19,8 +24,12 @@ $card-radius: 0.5rem;
 
   .partner-logo {
     height: 5rem;
-    width: 5rem;
-    box-shadow: 0 0 6px #aaa;
+    width: 15rem;
+
+    img {
+      object-fit: contain !important;
+      filter: drop-shadow(0 0 4px $secondary);
+    }
   }
 }
 
@@ -105,6 +114,7 @@ $card-radius: 0.5rem;
     line-height: 3rem;
     padding-left: 1rem;
     list-style: circle;
+
     li::marker {
       color: $primary;
     }
