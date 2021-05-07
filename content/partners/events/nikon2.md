@@ -1,6 +1,6 @@
 ---
 partnerId: nikon
-featuredImage: ../../uploads/nikon1.jpg
+featuredImage: ../../uploads/nikon2.png
 ---
 
 **Automated high-content imaging to study the response of human cells to novel anti-cancer treatments and identify new therapeutic targets**

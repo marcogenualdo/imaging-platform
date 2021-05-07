@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./style";
 
 $card-radius: 0.5rem;
 
@@ -24,25 +25,41 @@ $card-radius: 0.5rem;
 
 .events-box {
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
   justify-content: center;
 }
 
 .event-card {
   background-color: #fff;
-  flex: 0 0 20rem;
-  margin: 2rem;
+  flex: 0 0 25rem;
+  margin: 1rem;
   box-shadow: 0 0 6px #808080;
   height: 30rem;
 
   .event-image {
     height: 15rem;
+    transition: height 0.5s ease;
   }
 
   .event-content {
     padding: 1rem;
     height: 15rem;
     position: relative;
+    overflow: hidden;
+    transition: height 0.5s ease;
+
+    @include ulist;
+  }
+
+  .text-fade {
+    height: 10rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(to top, #fff, #fff0);
+    width: 100%;
   }
 
   button {
@@ -55,5 +72,16 @@ $card-radius: 0.5rem;
     position: absolute;
     right: 1rem;
     bottom: 0;
+    z-index: 5;
+  }
+
+  &:hover {
+    .event-image {
+      height: 0rem;
+    }
+
+    .event-content {
+      height: 30rem;
+    }
   }
 }

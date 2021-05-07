@@ -16,6 +16,7 @@ const PartnerSection = ({ partnerData }) => {
           className="partner-logo"
         />
       </div>
+      <div dangerouslySetInnerHTML={{ __html: partnerData.intro.html }} />
       <div className="events-box">
         {partnerData.events.map((item, index) => (
           <PartnerEvent eventData={item} key={index} />
@@ -40,6 +41,7 @@ const PartnerEvent = ({ eventData }) => {
             __html: eventData.html,
           }}
         />
+        <div className="text-fade" />
         <button>Read more</button>
       </div>
     </div>
@@ -90,6 +92,7 @@ export const query = graphql`
             name
             id
           }
+          html
         }
       }
     }
