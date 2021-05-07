@@ -7,20 +7,21 @@ $card-radius: 0.5rem;
   background-color: #f4f4f4;
   padding: 0;
   overflow: hidden;
-}
-
-.partner-header {
-  align-items: center;
-  display: flex;
-  justify-content: center;
   margin: 2rem 0;
-}
 
-.partner-logo {
-  height: 5rem;
-  width: 5rem;
-  display: inline-block;
-  margin: 0 2rem;
+  .partner-header {
+    margin: 2rem;
+  }
+
+  .partner-description {
+    font-size: 1rem;
+  }
+
+  .partner-logo {
+    height: 5rem;
+    width: 5rem;
+    box-shadow: 0 0 6px #aaa;
+  }
 }
 
 .events-box {

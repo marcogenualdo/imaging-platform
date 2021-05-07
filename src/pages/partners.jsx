@@ -15,8 +15,11 @@ const PartnerSection = ({ partnerData }) => {
           alt=""
           className="partner-logo"
         />
+        <div
+          className="partner-description"
+          dangerouslySetInnerHTML={{ __html: partnerData.intro.html }}
+        />
       </div>
-      <div dangerouslySetInnerHTML={{ __html: partnerData.intro.html }} />
       <div className="events-box">
         {partnerData.events.map((item, index) => (
           <PartnerEvent eventData={item} key={index} />
@@ -80,6 +83,7 @@ export const query = graphql`
   query {
     industrial: allFile(
       filter: { absolutePath: { regex: "/partners/industrial//" } }
+      sort: { fields: childrenMarkdownRemark___frontmatter___order }
     ) {
       nodes {
         childMarkdownRemark {
