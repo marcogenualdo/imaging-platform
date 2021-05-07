@@ -33,12 +33,15 @@ const PartnerEvent = ({ eventData }) => {
         alt=""
         className="event-image"
       />
-      <div
-        className="event-text"
-        dangerouslySetInnerHTML={{
-          __html: eventData.html,
-        }}
-      />
+      <div className="event-content">
+        <div
+          className="event-text"
+          dangerouslySetInnerHTML={{
+            __html: eventData.html,
+          }}
+        />
+        <button>Read more</button>
+      </div>
     </div>
   );
 };
