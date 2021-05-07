@@ -30,6 +30,8 @@ const PartnerSection = ({ partnerData }) => {
 };
 
 const PartnerEvent = ({ eventData }) => {
+  const pdf = eventData.frontmatter.pdf?.publicURL;
+
   return (
     <div className="event-card">
       <GatsbyImage
@@ -45,7 +47,11 @@ const PartnerEvent = ({ eventData }) => {
           }}
         />
         <div className="text-fade" />
-        <button>Read more</button>
+        {pdf && (
+          <a href={pdf} download>
+            Read more
+          </a>
+        )}
       </div>
     </div>
   );
@@ -142,6 +148,9 @@ export const query = graphql`
               }
             }
             partnerId
+            pdf {
+              publicURL
+            }
           }
           html
         }

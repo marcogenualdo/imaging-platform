@@ -1,5 +1,6 @@
 ---
 partnerId: crest
+pdf: ""
 featuredImage: ../../uploads/crest1.png
 ---
 

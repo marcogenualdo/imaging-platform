@@ -72,7 +72,7 @@ $card-radius: 0.5rem;
     width: 100%;
   }
 
-  button {
+  a {
     margin-bottom: 1rem;
     background-color: $primary;
     border: 0;
@@ -132,4 +132,5 @@ $card-radius: 0.5rem;
 
 .academic-logo {
   margin: 1rem 0;
+  max-width: 12rem;
 }

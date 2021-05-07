@@ -1,5 +1,6 @@
 ---
 partnerId: nikon
+pdf: ../../uploads/nikon-event-3.pdf
 featuredImage: ../../uploads/nikon3.png
 ---
 

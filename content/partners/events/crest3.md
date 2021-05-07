@@ -1,5 +1,6 @@
 ---
 partnerId: crest
+pdf: ../../uploads/crest-event-3.pdf
 featuredImage: ../../uploads/crest3.png
 ---
 
