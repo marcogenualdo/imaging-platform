@@ -33,12 +33,7 @@ const NewsEntry = ({ data }) => {
   return (
     <div className="news-entry" id={content.frontmatter.title}>
       <h3>{content.frontmatter.title}</h3>
-      <div
-        className="news-image"
-        style={{
-          width: content.html ? "50%" : "100%",
-        }}
-      >
+      <div className={`news-image${!content.html ? " no-description" : ""}`}>
         <GatsbyImage
           image={getImage(content.frontmatter.featuredImage)}
           alt=""

@@ -73,6 +73,8 @@
 
   p {
     color: $primary;
+    word-wrap: break-word;
+    line-break: anywhere;
   }
 
   div {
@@ -83,6 +85,7 @@
   }
 
   .member-avatar {
+    min-width: 5rem;
     width: 5rem;
     height: 5rem;
     overflow: hidden;
@@ -92,5 +95,13 @@
     img {
       border-radius: 50%;
     }
+  }
+}
+
+// phone
+@media screen and (max-width: $phone-width) {
+  .map-col {
+    padding-top: 2rem;
+    padding-left: 0;
   }
 }

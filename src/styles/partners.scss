@@ -139,3 +139,26 @@ $card-radius: 0.5rem;
   margin: 1rem 0;
   max-width: 12rem;
 }
+
+// phone
+@media screen and (max-width: $phone-width) {
+  .event-card {
+    flex: unset;
+  }
+
+  .academic-box {
+    display: block;
+  }
+
+  .academic-content {
+    ul {
+      line-height: unset;
+    }
+  }
+
+  .partner-box {
+    .partner-logo {
+      margin: auto;
+    }
+  }
+}

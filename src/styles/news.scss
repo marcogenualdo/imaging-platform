@@ -21,6 +21,10 @@
   }
 }
 
+.no-description {
+  width: 100%;
+}
+
 .news-text {
   text-align: justify;
   font-size: 1rem;
@@ -29,6 +33,7 @@
 // phone
 @media screen and (max-width: $phone-width) {
   .news-image {
+    float: unset;
     width: 100%;
   }
 }
