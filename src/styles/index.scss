@@ -6,14 +6,27 @@
 }
 
 .home-title {
-  color: white;
   position: absolute;
   left: 6rem;
   bottom: 2rem;
-  text-shadow: 0 0 4px black;
-  font-size: 4rem;
-  font-weight: 700;
   animation: title-drop ease-out 0.5s;
+  display: flex;
+  align-items: center;
+
+  svg {
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    margin-right: 2rem;
+    filter: drop-shadow(0 0 4px black);
+  }
+
+  h1 {
+    color: white;
+    text-shadow: 0 0 4px black;
+    font-size: 4rem;
+    font-weight: 700;
+  }
 }
 
 @keyframes title-drop {
@@ -25,13 +38,6 @@
     opacity: 1;
     transform: unset;
   }
-}
-
-.title-wrap {
-  width: 40%;
-  height: 100%;
-  background-color: $primary;
-  opacity: 10%;
 }
 
 .head-banner {

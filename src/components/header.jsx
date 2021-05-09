@@ -4,6 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
 import IbpmLogo from "../images/logo-ibpm.svg";
+import IbpmLogoFull from "../images/logo-ibpm-bg.svg";
 import "../styles/header.scss";
 import "../styles/style.scss";
 
@@ -97,8 +98,10 @@ const HomeHeader = () => {
           />
         ))}
       </Carousel>
-      <div className="title-wrap"></div>
-      <h1 className="home-title">IBPM Imaging platform</h1>
+      <div className="home-title">
+        <IbpmLogoFull />
+        <h1>Imaging platform</h1>
+      </div>
       <div className="head-banner"></div>
     </header>
   );
