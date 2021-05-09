@@ -1,7 +1,7 @@
 ---
 name: IMPARA
 id: impara
-featuredImage: ""
+featuredImage: null
 order: 2
 ---
 

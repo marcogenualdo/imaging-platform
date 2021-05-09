@@ -6,15 +6,12 @@ import Section from "../components/section";
 import "../styles/partners.scss";
 
 const PartnerSection = ({ partnerData }) => {
+  const image = getImage(partnerData.intro.frontmatter.featuredImage);
   return (
     <div className="partner-box">
       <div className="partner-header">
         <h1>{partnerData.intro.frontmatter.name}</h1>
-        <GatsbyImage
-          image={getImage(partnerData.intro.frontmatter.featuredImage)}
-          alt=""
-          className="partner-logo"
-        />
+        {image && <GatsbyImage image={image} alt="" className="partner-logo" />}
         <div
           className="partner-description"
           dangerouslySetInnerHTML={{ __html: partnerData.intro.html }}
@@ -109,8 +106,8 @@ const PartnersPage = ({ data }) => {
         ))}
       </Section>
       <Section title="Academic Partners">
-        {data.academic.nodes.map((item) => (
-          <AcademicPartner partnerData={item.childMarkdownRemark} />
+        {data.academic.nodes.map((item, index) => (
+          <AcademicPartner partnerData={item.childMarkdownRemark} key={index} />
         ))}
       </Section>
     </Layout>

@@ -20,8 +20,8 @@ const EquipmentPage = ({ data }) => {
         />
       </Section>
       <Section title="Equipment">
-        {data.items.nodes.map((item) => (
-          <EquipmentItem itemData={item.childMarkdownRemark} />
+        {data.items.nodes.map((item, index) => (
+          <EquipmentItem itemData={item.childMarkdownRemark} key={index} />
         ))}
       </Section>
     </Layout>
