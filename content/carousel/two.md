@@ -1,3 +1,3 @@
 ---
-featuredImage: ../uploads/news-img-1.jpg
+featuredImage: ../uploads/car2.png
 ---

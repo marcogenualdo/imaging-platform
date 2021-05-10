@@ -1,3 +1,3 @@
 ---
-featuredImage: ../uploads/dna-banner.jpg
+featuredImage: ../uploads/car1.png
 ---
