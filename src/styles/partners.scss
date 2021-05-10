@@ -46,6 +46,7 @@ $card-radius: 0.5rem;
   margin: 1rem;
   box-shadow: 0 0 6px $secondary;
   height: 30rem;
+  display: grid; // solves extra space under image in prod
 
   .event-image {
     height: 15rem;
