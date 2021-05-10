@@ -44,7 +44,7 @@ const Sidebar = ({ pageName, open }) => {
               <MicroscopeSvg />
             </SvgIcon>
           }
-          title="Equipment"
+          title="The Platform"
         >
           <Menu.ItemGroup subMenuKey="equipment-sub">
             <Menu.Item key="equipment">

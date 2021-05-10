@@ -11,6 +11,7 @@
   bottom: 2rem;
   animation: title-drop ease-out 0.5s;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   svg {

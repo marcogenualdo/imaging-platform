@@ -71,6 +71,14 @@ footer {
 
 // phone
 @media screen and (max-width: $phone-width) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
   ul {
     padding-left: 1rem;
   }
