@@ -149,7 +149,7 @@ export const query = graphql`
         sponsors {
           logo {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(width: 620)
             }
           }
         }

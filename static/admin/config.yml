@@ -10,11 +10,17 @@ locale: it
 collections:
   - name: 'carousel'
     label: 'Home Carousel'
-    folder: 'content/carousel'
-    create: true
-    fields:
-      - { label: 'Order', name: 'order', widget: 'number' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
+    create: false
+    files:
+      - name: 'home-carousel'
+        label: 'Home Carousel'
+        file: 'content/home/carousel.json'
+        fields:
+          - name: 'carousel'
+            label: 'Carousel'
+            widget: 'list'
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image', default: '../uploads/dna-banner.jpg' }
 
   - name: 'home-intro'
     label: 'Home Intro'
@@ -57,7 +63,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Order', name: 'order', widget: 'number' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
       - { label: 'Text', name: 'body', widget: 'markdown' }
 
   - name: 'access'
@@ -88,7 +94,7 @@ collections:
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
       - { label: 'Date', name: 'date', widget: 'date', format: 'YYYY-MM-DD', default: '' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
@@ -98,7 +104,7 @@ collections:
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
       - { label: 'Date', name: 'date', widget: 'date', format: 'YYYY-MM-DD', default: '' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
@@ -135,7 +141,7 @@ collections:
             fields:
             - { label: 'Name', name: 'name', widget: 'string' }
             - { label: 'Mail', name: 'mail', widget: 'string' }
-            - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
+            - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
 
   - name: 'publications'
     label: 'Publications'
@@ -176,5 +182,5 @@ collections:
     fields:
       - { label: 'Partner Id', name: 'partnerId', widget: 'string' }
       - { label: 'File Attachment', name: 'pdf', widget: 'file', default: null }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
       - { label: 'Description', name: 'body', widget: 'markdown' }

@@ -65,17 +65,12 @@ const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
 const HomeHeader = () => {
   const { banners } = useStaticQuery(graphql`
     query {
-      banners: allFile(
-        filter: { absolutePath: { regex: "/carousel//" } }
-        sort: { fields: childrenMarkdownRemark___frontmatter___order }
-      ) {
-        nodes {
-          childMarkdownRemark {
-            frontmatter {
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData(width: 1920)
-                }
+      banners: file(relativePath: { eq: "home/carousel.json" }) {
+        childHomeJson {
+          carousel {
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 1920)
               }
             }
           }
@@ -92,10 +87,10 @@ const HomeHeader = () => {
         dotPosition="top"
         className="home-carousel"
       >
-        {banners.nodes.map((item, index) => (
+        {banners.childHomeJson.carousel.map((item, index) => (
           <GatsbyImage
             className="carousel-image"
-            image={getImage(item.childMarkdownRemark.frontmatter.featuredImage)}
+            image={getImage(item.image)}
             alt=""
             key={index}
           />

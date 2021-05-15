@@ -1,0 +1,8 @@
+{
+  "carousel": [
+    { "image": "../uploads/car1.png" },
+    { "image": "../uploads/car2.png" },
+    { "image": "../uploads/car3.png" },
+    { "image": "../uploads/car4.png" }
+  ]
+}
