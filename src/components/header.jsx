@@ -65,7 +65,10 @@ const PageHeader = ({ menuOpen, toggleMenu, pageName }) => {
 const HomeHeader = () => {
   const { banners } = useStaticQuery(graphql`
     query {
-      banners: allFile(filter: { absolutePath: { regex: "/carousel//" } }) {
+      banners: allFile(
+        filter: { absolutePath: { regex: "/carousel//" } }
+        sort: { fields: childrenMarkdownRemark___frontmatter___order }
+      ) {
         nodes {
           childMarkdownRemark {
             frontmatter {

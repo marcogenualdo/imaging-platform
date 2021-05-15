@@ -12,7 +12,7 @@ import "../styles/style.scss";
 const IndexPage = ({ data }) => {
   const introTitle = data.intro.childMarkdownRemark.frontmatter.title;
   const members = data.members.childHomeJson.members;
-  const sponsorLogos = data.sponsors.nodes;
+  const sponsorLogos = data.sponsors.childHomeJson.sponsors;
 
   return (
     <>
@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
             <div className="sp-box">
               {sponsorLogos.map((item, index) => (
                 <div key={index} className="sp-item">
-                  <GatsbyImage image={getImage(item)} alt="" />
+                  <GatsbyImage image={getImage(item.logo)} alt="" />
                 </div>
               ))}
             </div>
@@ -144,10 +144,14 @@ export const query = graphql`
         }
       }
     }
-    sponsors: allFile(filter: { absolutePath: { regex: "/home/sponsors//" } }) {
-      nodes {
-        childImageSharp {
-          gatsbyImageData(width: 420)
+    sponsors: file(relativePath: { eq: "home/sponsors.json" }) {
+      childHomeJson {
+        sponsors {
+          logo {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
     }

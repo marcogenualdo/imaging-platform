@@ -13,6 +13,7 @@ collections:
     folder: 'content/carousel'
     create: true
     fields:
+      - { label: 'Order', name: 'order', widget: 'number' }
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
 
   - name: 'home-intro'
@@ -24,6 +25,20 @@ collections:
         file: 'content/home/intro.md'
         fields:
           - { label: 'Text', name: 'body', widget: 'markdown' }
+
+  - name: 'home-sponsors'
+    label: 'Home Sponsors'
+    create: false
+    files:
+      - name: 'home-sponsors'
+        label: 'Home Sponsors'
+        file: 'content/home/sponsors.json'
+        fields:
+          - name: 'sponsors'
+            label: 'Sponsors'
+            widget: 'list'
+            fields:
+            - { label: 'Logo', name: 'logo', widget: 'image' }
 
   - name: 'equipment-intro'
     label: 'Equipment Intro'
@@ -42,7 +57,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Order', name: 'order', widget: 'number' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
       - { label: 'Text', name: 'body', widget: 'markdown' }
 
   - name: 'access'
@@ -73,7 +88,7 @@ collections:
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
       - { label: 'Date', name: 'date', widget: 'date', format: 'YYYY-MM-DD', default: '' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
@@ -83,7 +98,7 @@ collections:
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
       - { label: 'Date', name: 'date', widget: 'date', format: 'YYYY-MM-DD', default: '' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
@@ -120,7 +135,7 @@ collections:
             fields:
             - { label: 'Name', name: 'name', widget: 'string' }
             - { label: 'Mail', name: 'mail', widget: 'string' }
-            - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'news-img-1.jpg' }
+            - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
 
   - name: 'publications'
     label: 'Publications'
@@ -139,8 +154,8 @@ collections:
     folder: 'content/partners/academic'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Order', name: 'order', widget: 'number' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
+      - { label: 'Order', name: 'order', widget: 'number', default: 0 }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: null}
       - { label: 'Text', name: 'body', widget: 'markdown' }
 
   - name: 'partners-industrial'
@@ -150,8 +165,8 @@ collections:
     fields:
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Partner Id', name: 'id', widget: 'string' }
-      - { label: 'Order', name: 'order', widget: 'number' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
+      - { label: 'Order', name: 'order', widget: 'number', default: 0 }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: null}
       - { label: 'Text', name: 'body', widget: 'markdown' }
 
   - name: 'partners-events'
@@ -160,6 +175,6 @@ collections:
     folder: 'content/partners/events'
     fields:
       - { label: 'Partner Id', name: 'partnerId', widget: 'string' }
-      - { label: 'File Attachment', name: 'pdf', widget: 'file' }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-banner.jpg' }
+      - { label: 'File Attachment', name: 'pdf', widget: 'file', default: null }
+      - { label: 'Image', name: 'featuredImage', widget: 'image', default: 'dna-image.jpg' }
       - { label: 'Description', name: 'body', widget: 'markdown' }
