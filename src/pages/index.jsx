@@ -36,16 +36,6 @@ const IndexPage = ({ data }) => {
             </div>
           </Section>
 
-          <Section title="Sponsors">
-            <div className="sp-box">
-              {sponsorLogos.map((item, index) => (
-                <div key={index} className="sp-item">
-                  <GatsbyImage image={getImage(item.logo)} alt="" />
-                </div>
-              ))}
-            </div>
-          </Section>
-
           <Section title="Members">
             <ul className="members-list">
               {members.map((member, index) => (
@@ -62,6 +52,16 @@ const IndexPage = ({ data }) => {
                 </li>
               ))}
             </ul>
+          </Section>
+
+          <Section title="Sponsors">
+            <div className="sp-box">
+              {sponsorLogos.map((item, index) => (
+                <div key={index} className="sp-item">
+                  <GatsbyImage image={getImage(item.logo)} alt="" />
+                </div>
+              ))}
+            </div>
           </Section>
         </div>
         <SEO title="Home" />
@@ -110,10 +110,7 @@ export const query = graphql`
       }
     }
     news: allFile(
-      sort: {
-        fields: childrenMarkdownRemark___frontmatter___order
-        order: DESC
-      }
+      sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
       filter: { absolutePath: { regex: "/news/news//" } }
       limit: 2
     ) {

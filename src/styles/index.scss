@@ -8,7 +8,7 @@
 .home-title {
   position: absolute;
   left: 6rem;
-  bottom: 2rem;
+  bottom: 1rem;
   animation: title-drop ease-out 0.5s;
   display: flex;
   flex-wrap: wrap;
@@ -69,8 +69,13 @@
   opacity: 0.1;
 }
 
+.intro {
+  font-style: italic;
+}
+
 .intro-text {
   width: 80%;
+  font-style: normal;
 
   @include ulist;
 }
@@ -97,7 +102,7 @@
 
   .news-preview-image {
     border-radius: $card-radius $card-radius 0 0;
-    height: 15rem;
+    height: 18rem;
 
     img {
       border-radius: $card-radius $card-radius 0 0;
@@ -114,7 +119,7 @@
     line-height: 0.9rem;
     background-color: #fff;
     border-radius: 0 0 $card-radius $card-radius;
-    height: 15rem;
+    height: 12rem;
 
     .news-preview-text-divider {
       height: 1px;
@@ -125,7 +130,7 @@
     .news-preview-text {
       font-size: 0.7rem;
       color: $secondary;
-      max-height: 7rem;
+      max-height: 3.8rem;
       overflow: hidden;
       text-align: justify;
     }
@@ -180,8 +185,11 @@
 
   .home-title {
     left: 1rem;
-    font-size: 3rem;
-    display: none;
+    bottom: 1.5rem;
+
+    h1 {
+      font-size: 2rem;
+    }
   }
 
   .intro-text {
@@ -198,8 +206,11 @@
   }
 
   .home-title {
-    bottom: 5.2rem;
-    font-size: 2.3rem;
+    left: 0.5rem;
+
+    h1 {
+      font-size: 2rem;
+    }
   }
 
   .home-bg {

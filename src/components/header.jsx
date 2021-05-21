@@ -98,7 +98,7 @@ const HomeHeader = () => {
       </Carousel>
       <div className="home-title">
         <IbpmLogoFull />
-        <h1>Imaging platform</h1>
+        <h1>IBPM Imaging platform</h1>
       </div>
       <div className="head-banner"></div>
     </header>
