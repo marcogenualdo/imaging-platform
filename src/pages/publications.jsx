@@ -25,9 +25,11 @@ const PublicationEntry = ({ data }) => {
       <strong>{data.title}</strong>
       <p>{data.authors}</p>
       <code>{data.notes}</code>
-      <a href={data.url} target="blank">
-        More
-      </a>
+      {data.url && (
+        <a href={data.url} target="blank">
+          More
+        </a>
+      )}
     </li>
   );
 };
