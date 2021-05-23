@@ -5,109 +5,48 @@ import Layout from "../components/layout";
 import Section from "../components/section";
 import "../styles/partners.scss";
 
-const PartnerSection = ({ partnerData }) => {
-  const image = getImage(partnerData.intro.frontmatter.featuredImage);
+const PartnerSection = ({ data }) => {
+  const partnerData = data.childMarkdownRemark;
+  const logo = getImage(partnerData.frontmatter.featuredImage);
+
   return (
     <div className="partner-box">
-      <div className="partner-header">
-        <h1>{partnerData.intro.frontmatter.name}</h1>
-        {image && <GatsbyImage image={image} alt="" className="partner-logo" />}
+      <a href={partnerData.frontmatter.href} target="blank">
+        <h1>{partnerData.frontmatter.name}</h1>
+      </a>
+      <div className="partner-content">
+        {logo && <GatsbyImage image={logo} alt="" className="partner-logo" />}
         <div
           className="partner-description"
-          dangerouslySetInnerHTML={{ __html: partnerData.intro.html }}
+          dangerouslySetInnerHTML={{ __html: partnerData.html }}
         />
       </div>
-      <div className="events-box">
-        {partnerData.events.map((item, index) => (
-          <PartnerEvent eventData={item} key={index} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const PartnerEvent = ({ eventData }) => {
-  const pdf = eventData.frontmatter.pdf?.publicURL;
-
-  return (
-    <div className="event-card">
-      <GatsbyImage
-        image={getImage(eventData.frontmatter.featuredImage)}
-        alt=""
-        className="event-image"
-      />
-      <div className="event-content">
-        <div
-          className="event-text"
-          dangerouslySetInnerHTML={{
-            __html: eventData.html,
-          }}
-        />
-        <div className="text-fade" />
-        {pdf && (
-          <a href={pdf} download>
-            Read more
-          </a>
-        )}
-      </div>
-    </div>
-  );
-};
-
-const AcademicPartner = ({ partnerData }) => {
-  return (
-    <div className="academic-box">
-      <div className="academic-content">
-        <h3>{partnerData.frontmatter.title}</h3>
-        <div
-          className="academic-text"
-          dangerouslySetInnerHTML={{
-            __html: partnerData.html,
-          }}
-        />
-      </div>
-      <div className="academic-logos">
-        <GatsbyImage
-          className="academic-logo"
-          image={getImage(partnerData.frontmatter.featuredImage)}
-          alt=""
-        />
-        <img
-          className="academic-logo"
-          src="../../content/uploads/logo-bbcd.png"
-          alt=""
-        />
-      </div>
+      {partnerData.frontmatter.downloads && (
+        <div className="events-box">
+          <strong>Events:</strong>
+          <ul>
+            {partnerData.frontmatter.downloads.map((item, index) => (
+              <li key={index}>
+                <a download href={item.href.publicURL}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
 
 const PartnersPage = ({ data }) => {
-  const partnerIntros = data.industrial.nodes;
-  const partnersData = partnerIntros.reduce((res, cur) => {
-    return {
-      ...res,
-      [cur.childMarkdownRemark.frontmatter.id]: {
-        intro: cur.childMarkdownRemark,
-        events: [],
-      },
-    };
-  }, {});
-  for (let item of data.events.nodes) {
-    const partnerId = item.childMarkdownRemark.frontmatter.partnerId;
-    partnersData[partnerId].events.push(item.childMarkdownRemark);
-  }
+  const partnersData = data.partners.nodes;
 
   return (
     <Layout pageName="partners">
-      <Section title="Industrial Partners">
-        {Object.values(partnersData).map((item, index) => (
-          <PartnerSection partnerData={item} key={index} />
-        ))}
-      </Section>
-      <Section title="Academic Partners">
-        {data.academic.nodes.map((item, index) => (
-          <AcademicPartner partnerData={item.childMarkdownRemark} key={index} />
+      <Section title="Partners">
+        {partnersData.map((item, index) => (
+          <PartnerSection data={item} key={index} />
         ))}
       </Section>
     </Layout>
@@ -116,56 +55,27 @@ const PartnersPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    industrial: allFile(
-      filter: { absolutePath: { regex: "/partners/industrial//" } }
+    partners: allFile(
       sort: { fields: childrenMarkdownRemark___frontmatter___order }
+      filter: { absolutePath: { regex: "/partners//" } }
     ) {
       nodes {
         childMarkdownRemark {
           frontmatter {
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(width: 420)
-              }
-            }
+            href
             name
-            id
-          }
-          html
-        }
-      }
-    }
-    events: allFile(filter: { absolutePath: { regex: "/partners/events//" } }) {
-      nodes {
-        childMarkdownRemark {
-          frontmatter {
+            order
             featuredImage {
               childImageSharp {
-                gatsbyImageData(width: 420)
+                gatsbyImageData(width: 320)
               }
             }
-            partnerId
-            pdf {
-              publicURL
-            }
-          }
-          html
-        }
-      }
-    }
-    academic: allFile(
-      filter: { absolutePath: { regex: "/partners/academic//" } }
-      sort: { fields: childrenMarkdownRemark___frontmatter___order }
-    ) {
-      nodes {
-        childMarkdownRemark {
-          frontmatter {
-            featuredImage {
-              childImageSharp {
-                gatsbyImageData(width: 420)
+            downloads {
+              label
+              href {
+                publicURL
               }
             }
-            title
           }
           html
         }
