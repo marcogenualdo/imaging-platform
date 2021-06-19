@@ -1,5 +1,4 @@
 import { graphql, Link } from "gatsby";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
@@ -90,10 +89,7 @@ const IndexPage = ({ data }) => {
 
 const NewsPreview = ({ data }) => {
   return (
-    <AnchorLink
-      to={`/news#${data.frontmatter.title}`}
-      className="news-preview-entry"
-    >
+    <Link to={`/news#${data.frontmatter.title}`} className="news-preview-entry">
       <div className="news-preview-image">
         <GatsbyImage
           className="news-preview-image"
@@ -113,7 +109,7 @@ const NewsPreview = ({ data }) => {
         <div className="news-preview-text-fade" />
         <div className="read-more">Read more {">"}</div>
       </div>
-    </AnchorLink>
+    </Link>
   );
 };
 

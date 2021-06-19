@@ -31,7 +31,8 @@ const NewsEntry = ({ data }) => {
   const dispDate = date.substr(0, date.indexOf("T"));
 
   return (
-    <div className="news-entry" id={content.frontmatter.title}>
+    <div className="news-entry">
+      <div className="news-anchor" id={content.frontmatter.title} />
       <h3>{content.frontmatter.title}</h3>
       <div className={`news-image${!content.html ? " no-description" : ""}`}>
         <GatsbyImage
