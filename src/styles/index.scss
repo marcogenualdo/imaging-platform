@@ -6,8 +6,6 @@
 }
 
 .home-title {
-  position: relative;
-  left: -1.5rem;
   animation: title-drop ease-out 0.5s;
   display: flex;
   flex-wrap: wrap;
@@ -15,10 +13,11 @@
   margin: 1rem 0;
 
   svg {
+    position: relative;
+    left: -2rem;
     display: inline-block;
     width: 8rem;
     height: 8rem;
-    margin-right: 1rem;
   }
 
   h1 {
@@ -185,12 +184,6 @@
     z-index: 2;
   }
 
-  .home-title {
-    h1 {
-      font-size: 2rem;
-    }
-  }
-
   .intro-text {
     width: 100%;
     text-align: justify;
@@ -205,10 +198,12 @@
   }
 
   .home-title {
-    left: 0.5rem;
-
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
     }
   }
 
