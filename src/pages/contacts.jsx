@@ -1,4 +1,3 @@
-import { EnvironmentTwoTone } from "@ant-design/icons";
 import { Col, Row } from "antd";
 import { graphql } from "gatsby";
 import React from "react";
@@ -25,7 +24,6 @@ const ContactsPage = ({ data }) => {
           </Col>
           <Col sm={24} lg={12} className="map-col">
             <div className="map-text">
-              <EnvironmentTwoTone style={{ display: "inline-block" }} />
               <h2 style={{ display: "inline" }}>Where we are.</h2>
             </div>
 

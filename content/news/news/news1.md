@@ -1,5 +1,5 @@
 ---
-title: New grant from Regione Lazio to develop 3D high-content imaging methodologies
+title: Grant award from Regione Lazio to develop 3D high-content imaging methodologies
 featuredImage: ../../uploads/news1.jpg
 date: 2021-04-19
 ---
