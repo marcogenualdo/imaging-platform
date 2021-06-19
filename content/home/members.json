@@ -1,14 +1,14 @@
 {
   "members": [
     {
+      "name": "Lia Asteriti",
+      "mail": "lia.asteriti@uniroma1.it",
+      "featuredImage": "../uploads/asteriti.jpeg"
+    },
+    {
       "name": "Francesca Degrassi",
       "mail": "francesca.degrassi@uniroma1.it",
       "featuredImage": "../uploads/degrassi.jpeg"
-    },
-    {
-      "name": "Patrizia Lavia",
-      "mail": "patrizia.lavia@uniroma1.it",
-      "featuredImage": "../uploads/lavia.jpeg"
     },
     {
       "name": "Giulia Guarguaglini",
@@ -16,9 +16,9 @@
       "featuredImage": "../uploads/guarguaglini.jpeg"
     },
     {
-      "name": "Lia Asteriti",
-      "mail": "lia.asteriti@uniroma1.it",
-      "featuredImage": "../uploads/asteriti.jpeg"
+      "name": "Patrizia Lavia",
+      "mail": "patrizia.lavia@uniroma1.it",
+      "featuredImage": "../uploads/lavia.jpeg"
     }
   ]
 }

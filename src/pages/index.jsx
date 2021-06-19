@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
@@ -28,12 +28,22 @@ const IndexPage = ({ data }) => {
             />
           </Section>
 
+          <Section title="About us">
+            <div
+              className="intro-text"
+              dangerouslySetInnerHTML={{
+                __html: data.about.childMarkdownRemark.html,
+              }}
+            />
+          </Section>
+
           <Section id="news" title="Latest News">
             <div className="news-preview-container">
               {data.news.nodes.map((item, index) => (
                 <NewsPreview data={item.childMarkdownRemark} key={index} />
               ))}
             </div>
+            <Link to="/news">Go to news.</Link>
           </Section>
 
           <Section title="Members">
@@ -106,6 +116,11 @@ export const query = graphql`
         frontmatter {
           title
         }
+        html
+      }
+    }
+    about: file(relativePath: { eq: "home/about.md" }) {
+      childMarkdownRemark {
         html
       }
     }

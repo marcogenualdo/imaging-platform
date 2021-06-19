@@ -23,7 +23,6 @@ const PartnerSection = ({ data }) => {
       </div>
       {partnerData.frontmatter.downloads && (
         <div className="events-box">
-          <strong>Events:</strong>
           <ul>
             {partnerData.frontmatter.downloads.map((item, index) => (
               <li key={index}>

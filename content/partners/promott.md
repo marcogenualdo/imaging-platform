@@ -1,5 +1,5 @@
 ---
-name: PROMOTT Instrument
+name: The CNR "Promo TT Instrument"
 href: https://promott.cnr.it/it
 featuredImage: ../uploads/promott.png
 downloads: null

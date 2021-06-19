@@ -22,7 +22,7 @@
 }
 
 .partner-box {
-  margin: 6rem 0;
+  margin: 4rem 0;
 
   h1 {
     margin-bottom: 1.8rem;
@@ -36,6 +36,17 @@
 
   .partner-content {
     @include ulist;
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    strong {
+      a {
+        color: black;
+        text-decoration: underline 1px $primary;
+      }
+    }
   }
 }
 
