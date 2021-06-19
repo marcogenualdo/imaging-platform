@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import HomeBg from "../images/home-bg.svg";
 import "../styles/index.scss";
 import "../styles/style.scss";
+import IbpmLogoFull from "../images/logo-ibpm-bg.svg";
 
 const IndexPage = ({ data }) => {
   const introTitle = data.intro.childMarkdownRemark.frontmatter.title;
@@ -19,6 +20,13 @@ const IndexPage = ({ data }) => {
       <Layout pageName="home">
         <HomeBg className="home-bg" />
         <div className="content">
+          <div className="home-title">
+            <IbpmLogoFull />
+            <div>
+              <h1>Imaging platform</h1>
+              <h3>Institute of Molecular Biology and Pathology</h3>
+            </div>
+          </div>
           <Section className="intro" title={introTitle}>
             <div
               className="intro-text"
