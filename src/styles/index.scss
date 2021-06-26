@@ -71,12 +71,16 @@
 }
 
 .intro {
-  font-style: italic;
+  .section-header {
+    font-style: italic;
+    h1 {
+      color: #182b69;
+    }
+  }
 }
 
 .intro-text {
   width: 80%;
-  font-style: normal;
 
   @include ulist;
 }

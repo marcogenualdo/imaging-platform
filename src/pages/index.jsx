@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React from "react";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import Section from "../components/section";
 import SEO from "../components/seo";
@@ -14,6 +14,11 @@ const IndexPage = ({ data }) => {
   const members = data.members.childHomeJson.members;
   const sponsorLogos = data.sponsors.childHomeJson.sponsors;
 
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 420);
+  }, []);
+
   return (
     <>
       <Layout pageName="home">
@@ -21,10 +26,12 @@ const IndexPage = ({ data }) => {
         <div className="content">
           <div className="home-title">
             <IbpmLogoFull />
+            {isMobile && <CNRLogo />}
             <div>
               <h1>Imaging platform</h1>
               <h3>Institute of Molecular Biology and Pathology</h3>
             </div>
+            {!isMobile && <CNRLogo />}
           </div>
           <Section className="intro" title={introTitle}>
             <div
@@ -86,6 +93,15 @@ const IndexPage = ({ data }) => {
     </>
   );
 };
+
+const CNRLogo = () => (
+  <StaticImage
+    src="../images/logo-cnr.png"
+    alt="CNR"
+    height={16 * 8}
+    style={{ position: "relative", top: "0.5rem" }}
+  />
+);
 
 const NewsPreview = ({ data }) => {
   return (
