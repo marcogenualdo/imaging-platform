@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
           <div className="home-title">
             <IbpmLogoFull />
             {isMobile && <CNRLogo />}
-            <div>
+            <div className="main-title">
               <h1>Imaging platform</h1>
               <h3>Institute of Molecular Biology and Pathology</h3>
             </div>

@@ -24,7 +24,7 @@ const ContactsPage = ({ data }) => {
           </Col>
           <Col sm={24} lg={12} className="map-col">
             <div className="map-text">
-              <h2 style={{ display: "inline" }}>Where we are.</h2>
+              <h2 style={{ display: "inline" }}>Where we are</h2>
             </div>
 
             <iframe

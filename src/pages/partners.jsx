@@ -11,11 +11,11 @@ const PartnerSection = ({ data }) => {
 
   return (
     <div className="partner-box">
+      {logo && <GatsbyImage image={logo} alt="" className="partner-logo" />}
       <a href={partnerData.frontmatter.href} target="blank">
         <h1>{partnerData.frontmatter.name}</h1>
       </a>
       <div className="partner-content">
-        {logo && <GatsbyImage image={logo} alt="" className="partner-logo" />}
         <div
           className="partner-description"
           dangerouslySetInnerHTML={{ __html: partnerData.html }}

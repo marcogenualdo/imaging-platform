@@ -14,7 +14,7 @@ Collaborations with teams in this Department combine the use of structural biolo
 
 The imaging platform is hosted within the Department of Biology and Biotechnology of Sapienza University (“San Lorenzo” compound), strengthening the collaboration between BBCD and IBPM research teams and offering opportunities for adapting imaging methods to a variety of model systems, ranging from bacterial species to yeast, drosophila and mice tissues, as well as multiple mammalian models of cell division and differentiation.
 
-[Green Drosophila on the cover](https://drive.google.com/file/d/1wZynYgMQBS1N1UQ6uhmUVvW-YctPa7S2/view?usp=sharing)
+[Green Drosophila on the cover: a fluorescent Drosophila larva expressing a UAS-Yeti-GFP transgene](https://drive.google.com/file/d/1wZynYgMQBS1N1UQ6uhmUVvW-YctPa7S2/view?usp=sharing)
 
 **[Department of Drug Chemistry and Technologies](https://web.uniroma1.it/dip_ctf/)**
 

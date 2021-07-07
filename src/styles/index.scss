@@ -5,10 +5,18 @@
   position: relative;
 }
 
+// wide screens
+@media screen and (min-width: 1680) {
+  .home-title {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+
 .home-title {
   animation: title-drop ease-out 0.5s;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   margin: 1rem 0;
 
@@ -20,10 +28,15 @@
     height: 8rem;
   }
 
+  .main-title {
+    margin-right: 1rem;
+  }
+
   h1 {
-    font-size: 4rem;
+    font-size: 4vw;
     font-weight: 700;
     margin-bottom: 1rem;
+    white-space: nowrap;
   }
 
   h3 {
@@ -202,8 +215,11 @@
   }
 
   .home-title {
+    flex-wrap: wrap;
+
     h1 {
       font-size: 2.5rem;
+      white-space: normal;
     }
 
     h3 {
