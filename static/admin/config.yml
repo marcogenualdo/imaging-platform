@@ -8,6 +8,8 @@ public_folder: content/uploads
 locale: it
 
 collections:
+  # --- HOME --- #
+
   - name: 'carousel'
     label: 'Home Carousel'
     create: false
@@ -46,6 +48,34 @@ collections:
             fields:
             - { label: 'Logo', name: 'logo', widget: 'image' }
 
+  - name: 'home-about'
+    label: 'Home About'
+    create: false
+    files:
+      - name: 'access'
+        label: 'Access'
+        file: 'content/home/about.md'
+        fields:
+          - { label: 'Text', name: 'body', widget: 'markdown' }
+
+  - name: 'members'
+    label: 'Members'
+    create: false
+    files:
+      - name: 'members'
+        label: 'Members'
+        file: 'content/home/members.json'
+        fields:
+          - name: 'members'
+            label: 'Members'
+            widget: 'list'
+            fields:
+            - { label: 'Name', name: 'name', widget: 'string' }
+            - { label: 'Mail', name: 'mail', widget: 'string' }
+            - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
+
+  # --- EQUIPMENT --- #
+
   - name: 'equipment-intro'
     label: 'Equipment Intro'
     create: false
@@ -66,6 +96,8 @@ collections:
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
       - { label: 'Text', name: 'body', widget: 'markdown' }
 
+  # --- ACCESS --- #
+
   - name: 'access'
     label: 'Access'
     create: false
@@ -75,6 +107,8 @@ collections:
         file: 'content/access/access.md'
         fields:
           - { label: 'Text', name: 'body', widget: 'markdown' }
+
+  # --- GUIDELINES --- #
 
   - name: 'guidelines'
     label: 'Guidelines'
@@ -87,6 +121,18 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Text', name: 'body', widget: 'markdown' }
 
+  # --- TUTORIALS --- #
+
+  - name: 'tutorials'
+    label: 'Tutorials'
+    folder: 'content/tutorials'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Link to video', name: 'videoLink', widget: 'string' }
+      - { label: 'Description', name: 'body', widget: 'markdown' }
+
+  # --- NEWS & EVENTS --- #
 
   - name: 'news'
     label: 'News'
@@ -108,14 +154,7 @@ collections:
       - { label: 'Date', name: 'date', widget: 'date', format: 'YYYY-MM-DD', default: '' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: 'tutorials'
-    label: 'Tutorials'
-    folder: 'content/tutorials'
-    create: true
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Link to video', name: 'videoLink', widget: 'string' }
-      - { label: 'Description', name: 'body', widget: 'markdown' }
+  # --- CONTACTS --- #
 
   - name: 'contacts'
     label: 'Contacts'
@@ -127,21 +166,7 @@ collections:
         fields:
           - { label: 'Text (format contacts as a list, emails as BOLD)', name: 'body', widget: 'markdown' }
 
-  - name: 'members'
-    label: 'Members'
-    create: false
-    files:
-      - name: 'members'
-        label: 'Members'
-        file: 'content/home/members.json'
-        fields:
-          - name: 'members'
-            label: 'Members'
-            widget: 'list'
-            fields:
-            - { label: 'Name', name: 'name', widget: 'string' }
-            - { label: 'Mail', name: 'mail', widget: 'string' }
-            - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
+  # --- PUBLICATIONS --- #
 
   - name: 'publications'
     label: 'Publications'
@@ -155,35 +180,25 @@ collections:
       - { label: 'Notes', name: 'notes', widget: 'string' }
       - { label: 'URL', name: 'url', widget: 'string' }
 
-  - name: 'partners-academic'
-    label: 'Academic Partners'
-    create: true
-    folder: 'content/partners/academic'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Order', name: 'order', widget: 'number', default: 0 }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: null}
-      - { label: 'Text', name: 'body', widget: 'markdown' }
+  # --- PARTNERS --- #
 
-  - name: 'partners-industrial'
-    label: 'Industrial Partners'
+  - name: 'partners'
+    label: 'Partners'
     create: true
-    folder: 'content/partners/industrial'
+    folder: 'content/partners'
     identifier_field: 'name'
     fields:
       - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Partner Id', name: 'id', widget: 'string' }
       - { label: 'Order', name: 'order', widget: 'number', default: 0 }
       - { label: 'Image', name: 'featuredImage', widget: 'image', default: null}
+      - { label: 'Link', name: 'href', widget: 'string' }
       - { label: 'Text', name: 'body', widget: 'markdown' }
-
-  - name: 'partners-events'
-    label: 'Partner Events'
-    create: true
-    folder: 'content/partners/events'
-    identifier_field: 'partnerId'
-    fields:
-      - { label: 'Partner Id', name: 'partnerId', widget: 'string' }
-      - { label: 'File Attachment', name: 'pdf', widget: 'file', default: null }
-      - { label: 'Image', name: 'featuredImage', widget: 'image', default: '../uploads/dna-image.jpg' }
-      - { label: 'Description', name: 'body', widget: 'markdown' }
+      - label: 'Downloads'
+        name: 'downloads'
+        widget: 'object'
+        default: null
+        collapsed: true
+        create: true
+        fields:
+          - { label: 'Title', name: 'label', widget: 'string' }
+          - { label: 'Link', name: 'href', widget: 'string', default: null }
