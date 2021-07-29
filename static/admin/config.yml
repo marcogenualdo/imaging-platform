@@ -53,8 +53,8 @@ collections:
     label: 'Home About'
     create: false
     files:
-      - name: 'access'
-        label: 'Access'
+      - name: 'about'
+        label: 'About'
         file: 'content/home/about.md'
         fields:
           - { label: 'Text', name: 'body', widget: 'markdown' }
@@ -196,10 +196,9 @@ collections:
       - { label: 'Text', name: 'body', widget: 'markdown' }
       - label: 'Downloads'
         name: 'downloads'
-        widget: 'object'
+        widget: 'list'
         default: null
-        collapsed: true
-        create: true
+        allow_add: true
         fields:
           - { label: 'Title', name: 'label', widget: 'string' }
           - { label: 'Link', name: 'href', widget: 'string', default: null }
