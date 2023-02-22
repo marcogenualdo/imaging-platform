@@ -6,6 +6,11 @@
       "featuredImage": "../uploads/asteriti.jpeg"
     },
     {
+      "featuredImage": "content/uploads/costanzo-foto.jpg",
+      "name": "Vincenzo Costanzo",
+      "mail": "vincenzocostanzo10@gmail.com"
+    },
+    {
       "name": "Francesca Degrassi",
       "mail": "francesca.degrassi@uniroma1.it",
       "featuredImage": "../uploads/degrassi.jpeg"
@@ -19,6 +24,21 @@
       "name": "Patrizia Lavia",
       "mail": "patrizia.lavia@uniroma1.it",
       "featuredImage": "../uploads/lavia.jpeg"
+    },
+    {
+      "featuredImage": "content/uploads/valerio-licursi.jpg",
+      "name": "Valerio Licursi",
+      "mail": "valerio.licursi@uniroma1.it"
+    },
+    {
+      "featuredImage": "content/uploads/federica-polverino.jpg",
+      "name": "Federica Polverino",
+      "mail": "fede.polverino@gmail.com"
+    },
+    {
+      "featuredImage": "content/uploads/davide-valente.jpg",
+      "name": "Davide Valente",
+      "mail": "davide.valente@cnr.it"
     }
   ]
 }
