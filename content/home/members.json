@@ -16,6 +16,11 @@
       "featuredImage": "../uploads/degrassi.jpeg"
     },
     {
+      "featuredImage": "content/uploads/giulia-fianco.jpg",
+      "name": "Giulia Fianco",
+      "mail": "giulia.fianco@gmail.com"
+    },
+    {
       "name": "Giulia Guarguaglini",
       "mail": "giulia.guarguaglini@uniroma1.it",
       "featuredImage": "../uploads/guarguaglini.jpeg"
