@@ -1,5 +1,5 @@
 ---
-title: "Nikon Eclipse Ti2-E spinning disk inverter microscope "
+title: "Nikon Eclipse Ti2-E spinning disk inverted microscope "
 order: 3
 featuredImage: content/uploads/img-20230217-wa0004.jpg
 ---
