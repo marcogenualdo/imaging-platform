@@ -21,7 +21,7 @@ const Layout = ({ pageName, children }) => {
           <div className={`dark-layer ${menuOpen ? "dark-layer-show" : ""}`} />
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, this site is WIP. See the
+            © {new Date().getFullYear()}. See the
             {` `}
             <a
               href="https://github.com/marcogenualdo/imaging-platform"
