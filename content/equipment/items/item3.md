@@ -1,6 +1,6 @@
 ---
 title: Workstations for data analysis
-order: 3
+order: 4
 featuredImage: ../../uploads/eq3.jpg
 ---
 

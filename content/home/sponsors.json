@@ -1,6 +1,10 @@
 {
   "sponsors": [
-    { "logo": "../uploads/logo-lazio.png" },
-    { "logo": "../uploads/promott.png" }
+    {
+      "logo": "../uploads/logo-lazio.png"
+    },
+    {
+      "logo": "content/uploads/impara-pon-mur-copia.jpg"
+    }
   ]
 }
